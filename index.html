@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09111a">
   <meta name="description" content="Interactive firefighter equipment explorer, find-the-item game and quiz for professional English students.">
-  <title>Firefighter Equipment Lab 2.0 | SPBW1</title>
+  <title>Firefighter Equipment Lab 3.0 | SPBW1</title>
   <style>
 :root{color-scheme:dark;--bg:#090e16;--panel:#0e1723;--border:#283443;--muted:#8c9bab;--text:#eaf0f5;--accent:#f7c46e;--orange:#ef9359;--cyan:#74d5d6;--green:#92d1ae;--red:#e99482;--font:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font)}body{overscroll-behavior:none}.app{display:flex;flex-direction:column;min-height:100vh}.topbar{height:78px;border-bottom:1px solid #2e3945;background:#0b121d;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:12px;position:relative;z-index:3}.identity{display:flex;gap:15px;align-items:center}.brandmark{background:#e9ae65;color:#111b25;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:28px;line-height:1}.identity div{display:flex;flex-direction:column;gap:4px}.kicker,.eyebrow,.tiny-heading,.version,.status-text,.panel-head,#foundCount,.stage-hud,.orbit-tip,.camera-actions,.model-label,.category-tag,.item-code,.scoreline,.badge-finished,.footer{font-family:var(--font);letter-spacing:1.5px;font-weight:750;font-size:10px}.identity strong{font-size:16px;letter-spacing:1.15px}.identity em{font-style:normal;color:var(--accent)}.kicker{color:#7c91a3;font-size:9px}.topbar-right{display:flex;align-items:center;gap:10px;color:#8d9fae}.dot-live{height:6px;width:6px;background:#b4d5b5;border-radius:50%;box-shadow:0 0 12px #b4d5b5}.version{padding:8px 11px;border:1px solid #34424f;margin-left:18px;border-radius:4px}.workspace{flex:1;display:grid;grid-template-columns:minmax(255px,300px) minmax(400px,1fr) minmax(274px,334px);min-height:655px;height:calc(100vh - 116px);max-height:1050px}.panel{background:var(--panel);position:relative;min-height:0;overflow:auto;scrollbar-color:#354657 transparent;scrollbar-width:thin}.left-panel{border-right:1px solid var(--border);padding:32px 24px}.eyebrow{color:var(--accent);font-size:9px;letter-spacing:1.8px}.left-panel h1{font-size:32px;letter-spacing:-1.5px;line-height:1.13;font-weight:650;margin:21px 0 15px}.left-panel h1 span{color:#e4ad70}.lede,.blank-state p,.quiz-sidebar>p{line-height:1.65;color:#9aa9b7;font-size:13px}.lede{margin-bottom:28px}.segmented{display:flex;background:#0a111a;padding:4px;border:1px solid #293847;border-radius:8px;gap:4px}.mode{border:0;border-radius:5px;background:transparent;color:#899bab;flex:1;padding:11px 5px;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.7px}.mode.active{background:#263340;color:var(--text);box-shadow:0 2px 6px #0005}.tiny-heading{font-size:10px;color:#7d94a7}.explore-sidebar,.quiz-sidebar{padding-top:32px}.learning-point{display:flex;gap:15px;align-items:center;color:#c3cfda;font-size:12px;line-height:1.5;margin:15px 0}.learning-point span{color:#e4a969;font-family:monospace}.mini-divider{height:1px;background:#293743;margin:31px 0 25px}.legend{display:flex;gap:11px;align-items:center;font-size:12px;color:#b4c5d0;margin-top:16px}.legend b{margin-left:auto;color:#74889b}.legend-dot{height:9px;width:9px;border-radius:50%;flex-shrink:0}.cat-clothing{background:#e4bf73}.cat-equipment{background:#74c8ce}.cat-tool{background:#ed9d7f}.cat-communication{background:#aa9ded}.source-note{display:flex;gap:10px;margin-top:31px;border-top:1px solid #2c3945;padding-top:19px}.source-note>span{color:#f4bc7b}.source-note p{font-size:11px;color:#7d90a3;line-height:1.6;margin:0}.source-note strong{color:#bdcad4}.stage{min-width:0;position:relative;overflow:hidden;background:radial-gradient(ellipse at 49% 45%,#1c3240 0,#101e2b 42%,#0b1520 76%,#08111b 100%)}.stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent 94%,#b5d9e20c 95%,transparent 96%),linear-gradient(0deg,transparent 0,transparent 94%,#b5d9e209 95%,transparent 96%);background-size:48px 48px;opacity:.5}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 100px #06111b8c}.stage-hud{position:absolute;z-index:2;color:#8aa0b1;display:flex;flex-direction:column;gap:9px;font-size:9px}.stage-hud strong{color:#d1e0e8}.top-left{left:27px;top:28px}.top-right{right:26px;top:28px;text-align:right}.coordinate{color:#d2bc96}#view3d{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;outline:0}#view3d:active{cursor:grabbing}.hotspot-layer{position:absolute;inset:0;pointer-events:none;z-index:4}.hotspot{position:absolute;pointer-events:auto;border:1px solid #f9db9c;border-radius:50%;width:31px;height:31px;background:#131e26d9;color:#fff4d5;transform:translate(-50%,-50%);display:flex;justify-content:center;align-items:center;cursor:pointer;box-shadow:0 0 0 5px #f0c17718,0 0 24px #efb96b3b;transition:background .15s,box-shadow .15s,scale .15s;user-select:none;font-weight:700;font-size:11px}.hotspot:hover,.hotspot.active{background:#f3bd70;color:#17202b;box-shadow:0 0 0 8px #eab76b2d,0 0 38px #f3c9868a;scale:1.12}.hotspot.visited:not(.active){border-color:#a5d8be;color:#a9e4c7}.hotspot.hidden-marker{display:none}.hotspot .micro-label{position:absolute;pointer-events:none;white-space:nowrap;left:39px;top:4px;font-size:9px;font-weight:800;letter-spacing:1px;color:#cad6df;background:#111d27ed;padding:4px 6px;border:1px solid #3c4b53;border-radius:3px;opacity:0;transition:opacity .2s}.hotspot:hover .micro-label,.hotspot.active .micro-label{opacity:1}.stage-bottom{z-index:5;position:absolute;bottom:30px;left:27px;right:25px;display:flex;align-items:end;justify-content:space-between;gap:10px}.orbit-tip{color:#97acbb;font-size:9px}.orbit-icon{font-size:23px;margin-right:8px;color:var(--accent);vertical-align:middle}.divider-dot{padding:0 5px}.camera-actions{display:flex;gap:5px}.camera-actions button{background:#13212ed9;color:#cad8e1;border:1px solid #3b5162;border-radius:5px;font-size:10px;padding:11px 13px;cursor:pointer;font-weight:750;letter-spacing:.4px}.camera-actions button:hover{border-color:#b8a273;background:#283645}.model-label{position:absolute;z-index:3;bottom:84px;left:27px;font-size:9px;color:#617b8d}.model-label span{color:#d7b87a}.right-panel{padding:27px 20px;border-left:1px solid var(--border);display:flex;flex-direction:column}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--border)}#foundCount{font-size:9px;color:#93a6b4}.explore-content{min-height:285px;display:flex;flex-direction:column}.blank-state{padding-top:55px;text-align:center}.blank-icon{display:block;font-size:34px;color:#d6b580;margin-bottom:14px}.blank-state h2{font-size:20px;font-weight:600;margin:12px 0}.blank-state p{max-width:248px;margin:0 auto}.detail-card{padding:26px 0 20px}.detail-top{display:flex;align-items:center;justify-content:space-between;gap:5px}.item-code{color:#7a90a0}.category-tag{border:1px solid #bba87955;background:#5e503933;color:#e9c685;border-radius:3px;padding:5px;font-size:8px;letter-spacing:.5px}.detail-card h2{font-size:30px;letter-spacing:-1px;margin:26px 0 4px}.item-pl{color:#c2cbd1;font-size:14px}.detail-divider{background:#33434e;height:1px;margin:25px 0 24px}.detail-card>p{font-size:13px;line-height:1.65;color:#c4d2dc}.sentence-box{padding:14px;border:1px solid #344452;background:#122333;border-radius:7px;margin-top:24px}.sentence-box p{font-size:12px;line-height:1.55;color:#e2d1ae}.secondary-button,.primary-button,.quiet-button{cursor:pointer;font-weight:800;letter-spacing:1px;font-size:10px;border-radius:5px}.secondary-button{width:100%;border:1px solid #46576a;background:#1b2c3b;color:#d5e3ec;padding:15px;margin-top:18px}.secondary-button span,.primary-button span{float:right}.equipment-list-head{display:flex;justify-content:space-between;border-top:1px solid #2a3946;padding:20px 0 10px;margin-top:auto;align-items:center}.dot-grid{color:#8c9caa;letter-spacing:2px}.equipment-list{display:flex;flex-direction:column;gap:4px}.equipment-row{display:flex;align-items:center;text-align:left;background:none;border:1px solid transparent;color:#b2c1ce;cursor:pointer;padding:8px 8px 8px 0;border-radius:5px;font-size:12px;gap:9px}.equipment-row:hover,.equipment-row.selected{background:#172735;border-color:#324758;color:#f2efe8}.equipment-row .index{color:#748a9d;font-size:10px;font-weight:700;min-width:22px}.equipment-row .ename{flex:1}.equipment-row .check{font-size:13px;color:#617387}.equipment-row.visited .check{color:#9ce1c1}.bottom-source{margin-top:18px;border-top:1px solid #283743;padding-top:15px;font-size:9px;letter-spacing:.45px;color:#718395;line-height:1.7}.footer{height:38px;background:#090f17;border-top:1px solid #2b3844;display:flex;align-items:center;justify-content:space-between;padding:0 27px;color:#596f81;font-size:9px;gap:8px}.hidden{display:none!important}.quiz-sidebar>p{font-size:12px}.scoreline{display:flex;justify-content:space-between;margin:25px 0 12px;color:#99a9b9}.scoreline strong{color:#efd194}.progress-track{height:6px;background:#283946;border-radius:6px;overflow:hidden}.progress-track div{height:100%;width:0;background:#d4b77a;transition:width .2s}.prompt-card{border:1px solid #876c414f;background:linear-gradient(145deg,#2d2d25,#17242d);padding:17px;margin:22px 0;border-radius:6px}.prompt-card>span{font-size:10px;color:#dec289;letter-spacing:1.2px;font-weight:700}.prompt-card h2{font-size:24px;margin:11px 0 7px;line-height:1.2}.prompt-card p{color:#acb6bf;font-size:12px;margin:0;line-height:1.5}.quiz-status{font-size:12px;color:#9eb0bf;line-height:1.5;min-height:36px}.quiz-status.success{color:#a8deb8}.quiz-status.error{color:#eeb19b}.category-panel{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:24px 0}.category-panel .tiny-heading{grid-column:span 2}.category-panel button{font-size:10px;min-height:48px;background:#1a2b39;color:#d9e5ef;border:1px solid #425464;border-radius:5px;cursor:pointer;padding:8px}.category-panel button:hover{border-color:#efd29b;background:#2b3a45}.category-panel button.correct{border-color:#82d6a4;background:#1e4e40}.category-panel button.incorrect{border-color:#e69a8e;background:#533434}.primary-button{background:#eec27c;color:#15202c;width:100%;padding:15px;border:none;margin-top:13px}.quiet-button{background:transparent;border:1px solid #415469;color:#aebdcb;width:100%;padding:13px;margin-top:12px}.quiz-summary{text-align:center;padding:38px 8px 24px}.badge-finished{border:1px solid #c2a66a66;background:#5a4b2430;padding:8px;border-radius:4px;color:#f3d297}.quiz-summary h2{font-size:24px;margin:28px 0}.final-score{display:flex;align-items:baseline;justify-content:center;gap:9px}.final-score strong{font-size:65px;font-weight:600;color:#f0c784}.final-score span{font-size:12px;color:#8c9eac}.quiz-summary p{line-height:1.6;color:#afbec9;font-size:13px;margin-bottom:25px}.model-error{position:absolute;left:15%;right:15%;top:45%;z-index:10;background:#451e2b;padding:30px;color:#fbd6d5;border:1px solid #b86469;border-radius:7px}
@@ -34,6 +34,40 @@ body.challenge-active .locked-note{display:block}
 .right-panel .bottom-source { flex-shrink: 0; }
 .right-panel .equipment-list-head { margin-top: 18px; }
 
+
+/* Version 3.0: detailed stylised firefighter model, dots only, no memorisable marker numbers.
+   Visual diameter is 11px, but accessible/touch target stays 34px. */
+.hotspot{
+  width:34px;height:34px;min-width:34px;min-height:34px;
+  border:0;border-radius:50%;background:transparent;color:transparent;
+  box-shadow:none;outline:none;padding:0;font-size:0;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transform:translate(-50%,-50%);
+}
+.hotspot::before{
+  content:"";display:block;width:11px;height:11px;border-radius:50%;
+  background:#f5c978;border:1px solid #fff0be;
+  box-shadow:0 0 0 4px rgba(245,201,120,.18),0 0 14px 4px rgba(255,195,95,.58);
+  transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+}
+.hotspot:hover,.hotspot.active,.hotspot.visited:not(.active){
+  background:transparent;color:transparent;border:0;box-shadow:none;scale:1;
+}
+.hotspot:hover::before,.hotspot:focus-visible::before{
+  transform:scale(1.35);background:#fff3d5;
+  box-shadow:0 0 0 6px rgba(245,201,120,.30),0 0 18px 5px rgba(255,217,145,.76);
+}
+.hotspot.active{outline:none;}
+.hotspot.active::before{
+  background:#f9f4dc;transform:scale(1.3);
+  box-shadow:0 0 0 6px rgba(255,242,180,.30),0 0 22px 7px rgba(255,212,130,.82);
+}
+.hotspot.visited:not(.active)::before{
+  background:#9ce9c7;border-color:#d9fff1;
+  box-shadow:0 0 0 4px rgba(156,233,199,.14),0 0 13px 3px rgba(156,233,199,.47);
+}
+.hotspot.hidden-marker{display:none;}
+@media(max-width:500px){.hotspot{width:38px;height:38px}.hotspot::before{width:12px;height:12px}}
 </style>
   
 </head>
@@ -44,13 +78,13 @@ body.challenge-active .locked-note{display:block}
         <span class="brandmark" aria-hidden="true">✳</span>
         <div>
           <span class="kicker">SPBW1 · PROFESSIONAL ENGLISH · LESSON 03</span>
-          <strong>FIREFIGHTER <em>EQUIPMENT LAB</em> <span class="v2">2.2</span></strong>
+          <strong>FIREFIGHTER <em>EQUIPMENT LAB</em> <span class="v2">3.0</span></strong>
         </div>
       </div>
       <div class="topbar-right">
         <span class="dot-live"></span>
         <span class="status-text">INTERACTIVE TRAINING MODULE</span>
-        <span class="version">BUILD / 02</span>
+        <span class="version">BUILD / 3.0</span>
       </div>
     </header>
 
@@ -58,7 +92,7 @@ body.challenge-active .locked-note{display:block}
       <aside class="left-panel panel" aria-label="Learning panel">
         <div class="eyebrow">SENDUR 8.2 · FIRE BRIGADE</div>
         <h1>Inspect the<br><span>firefighter.</span></h1>
-        <p class="lede">Rotate the model, find hidden numbered markers and learn the English names of essential firefighter equipment.</p>
+        <p class="lede">Rotate the detailed firefighter model, find hidden glowing hotspots and learn the English names of essential firefighter equipment.</p>
 
         <div class="segmented" role="group" aria-label="Learning mode">
           <button id="exploreMode" class="mode active" aria-pressed="true">01 · EXPLORE</button>
@@ -68,7 +102,7 @@ body.challenge-active .locked-note{display:block}
 
         <section class="explore-sidebar" id="exploreSidebar">
           <div class="tiny-heading">LEARNING GOALS</div>
-          <div class="learning-point"><span>01</span> Identify numbered equipment markers</div>
+          <div class="learning-point"><span>01</span> Identify glowing equipment hotspots</div>
           <div class="learning-point"><span>02</span> Match English and Polish names</div>
           <div class="learning-point"><span>03</span> Classify equipment correctly</div>
           <div class="mini-divider"></div>
@@ -82,11 +116,11 @@ body.challenge-active .locked-note{display:block}
 
         <section id="challengeSidebar" class="quiz-sidebar hidden" aria-live="polite">
           <div class="tiny-heading" id="challengeHeading">TRAINING CHALLENGE</div>
-          <p id="challengeIntro">Find equipment by rotating the model. Some numbered markers are hidden on the back and sides.</p>
+          <p id="challengeIntro">Find equipment by rotating the model. Some glowing dots are hidden on the back and sides.</p>
           <div class="scoreline"><span id="progressLabel">QUESTION 1 / 12</span><strong id="scoreLabel">0 / 12 PTS</strong></div>
           <div class="progress-track"><div id="progressBar"></div></div>
           <div class="prompt-card"><span id="promptLabel">FIND THIS ITEM</span><h2 id="quizTarget">Helmet</h2><p id="quizHint">Rotate the model to locate it.</p></div>
-          <div id="quizStatus" class="quiz-status" aria-live="polite">Click the correct numbered marker on the model.</div>
+          <div id="quizStatus" class="quiz-status" aria-live="polite">Click the correct glowing dot on the model.</div>
           <div id="categoryPanel" class="category-panel hidden">
             <div class="tiny-heading">CHOOSE ITS CATEGORY</div>
             <button data-category="clothing">Protective clothing</button>
@@ -103,7 +137,7 @@ body.challenge-active .locked-note{display:block}
         <div class="stage-hud top-left"><span class="corner-notation">MODEL / <strong>FIREFIGHTER PPE TRAINER</strong></span><span>REAL-TIME 3D · DRAG TO ORBIT</span></div>
         <div class="stage-hud top-right"><span class="coordinate" id="orientationLabel">FRONT VIEW / 000°</span></div>
         <canvas id="view3d" aria-label="Interactive rotatable three-dimensional firefighter. Use mouse or touch to rotate." tabindex="0"></canvas>
-        <div id="hotspots" class="hotspot-layer" aria-label="Interactive numbered equipment markers"></div>
+        <div id="hotspots" class="hotspot-layer" aria-label="Interactive glowing equipment hotspots"></div>
         <div id="modelError" class="model-error hidden">Your browser could not start the 3D model. Try another modern browser with WebGL enabled.</div>
         <div class="stage-bottom">
           <div class="orbit-tip"><span class="orbit-icon">⤾</span> DRAG TO ROTATE <span class="divider-dot">·</span> SCROLL TO ZOOM</div>
@@ -115,13 +149,13 @@ body.challenge-active .locked-note{display:block}
             <button id="resetView" title="Reset view">RESET ↻</button>
           </div>
         </div>
-        <div class="model-label">MODEL 002.1 <span>•</span> FIREFIGHTER EQUIPMENT LAB</div>
+        <div class="model-label">MODEL 003.0 <span>•</span> FIREFIGHTER EQUIPMENT LAB</div>
       </main>
 
       <aside class="right-panel panel" aria-label="Equipment details">
         <div class="panel-head"><span class="eyebrow">EQUIPMENT INDEX</span><span id="foundCount">00 / 12 IDENTIFIED</span></div>
         <div id="exploreContent" class="explore-content">
-          <div class="blank-state" id="blankState"><span class="blank-icon">⌖</span><h2>Select a number.</h2><p>Click one of the numbered markers on the 3D firefighter to reveal the English name, Polish translation and function of the item.</p></div>
+          <div class="blank-state" id="blankState"><span class="blank-icon">⌖</span><h2>Select an item.</h2><p>Click one of the glowing dots on the 3D firefighter to reveal the English name, Polish translation and function of the item.</p></div>
           <div id="detailCard" class="detail-card hidden" aria-live="polite">
             <div class="detail-top"><span id="itemCode" class="item-code">EQ-01</span><span id="itemCategory" class="category-tag">PROTECTIVE CLOTHING</span></div>
             <h2 id="itemEn">Helmet</h2><div id="itemPl" class="item-pl">hełm strażacki</div>
@@ -133,18 +167,18 @@ body.challenge-active .locked-note{display:block}
         <div id="quizSummary" class="quiz-summary hidden"><span class="badge-finished">MISSION COMPLETE</span><h2 id="summaryTitle">Training complete.</h2><div class="final-score"><strong id="finalScore">0</strong><span id="finalScoreMax">/ 12 POINTS</span></div><p id="finalMessage">Well done!</p><button id="replayQuiz" class="primary-button">TRY AGAIN ↗</button></div>
         <div class="equipment-list-head"><span class="tiny-heading">EQUIPMENT CHECKLIST</span><span class="dot-grid">•••</span></div>
         <div id="equipmentList" class="equipment-list"></div>
-        <div id="lockedNote" class="locked-note">INDEX LOCKED WHILE SEARCHING. ROTATE THE MODEL TO FIND THE NUMBERED ITEMS.</div>
-        <div class="bottom-source">SOURCE: SENDUR &amp; WARECKA · 8.2 FIRE BRIGADE<br>LEARNING ACTIVITY: SPBW1 / LESSON 03 / VERSION 2.2</div>
+        <div id="lockedNote" class="locked-note">EQUIPMENT LIST LOCKED DURING CHALLENGES. ROTATE THE MODEL TO FIND THE GLOWING DOTS.</div>
+        <div class="bottom-source">SOURCE: SENDUR &amp; WARECKA · 8.2 FIRE BRIGADE<br>LEARNING ACTIVITY: SPBW1 / LESSON 03 / VERSION 3.0</div>
       </aside>
     </div>
 
-    <footer class="footer"><span>BUILT FOR CLASSROOM LEARNING · NO ACCOUNT REQUIRED</span><span>OFFLINE-READY / NUMBERED MARKERS / EXPLORE + FIND + QUIZ</span></footer>
+    <footer class="footer"><span>BUILT FOR CLASSROOM LEARNING · NO ACCOUNT REQUIRED</span><span>OFFLINE-READY / GLOWING HOTSPOTS / RANDOMISED FIND + QUIZ</span></footer>
   </div>
 <script>
 (() => {
   "use strict";
 
-  // Marker numbers are deliberately distributed across the entire model.
+  // Hotspots are deliberately distributed across the entire model.
   // Front: 02, 04, 09. Left: 05, 07, 11. Right: 08.
   // Back: 01, 03, 06, 10, 12.
   const ITEMS = [
@@ -256,103 +290,147 @@ body.challenge-active .locked-note{display:block}
   function ringXY(cx,cy,cz,R,r,color,id,n=44,m=9){ const b=builder(); function p(t,q){ return [cx+(R+r*Math.cos(q))*Math.cos(t), cy+(R+r*Math.cos(q))*Math.sin(t), cz+r*Math.sin(q)]; } for(let i=0;i<n;i++) for(let j=0;j<m;j++){ const t=i*2*Math.PI/n,t2=(i+1)*2*Math.PI/n,q=j*2*Math.PI/m,q2=(j+1)*2*Math.PI/m; b.quad(p(t,q),p(t2,q),p(t2,q2),p(t,q2)); } upload(b,color,id); }
   function ringXZ(cx,cy,cz,R,r,color,id,n=44,m=8){ const b=builder(); function p(t,q){ return [cx+(R+r*Math.cos(q))*Math.cos(t), cy+r*Math.sin(q), cz+(R+r*Math.cos(q))*Math.sin(t)]; } for(let i=0;i<n;i++) for(let j=0;j<m;j++){ const t=i*2*Math.PI/n,t2=(i+1)*2*Math.PI/n,q=j*2*Math.PI/m,q2=(j+1)*2*Math.PI/m; b.quad(p(t,q),p(t2,q),p(t2,q2),p(t,q2)); } upload(b,color,id); }
 
+  
   function model(){
-    const suit="#2c3941", suitLight="#3a4952", trim="#ccb26b", trimBright="#ffe198", boots="#151d23", dark="#162129", steel="#8ea2aa", hose="#968b67", strap="#101920", hood="#6b777f";
+    const suit="#252f37", suitLight="#34424b", suitPanel="#1d252c", trim="#d6b05e", trimBright="#fff1b0", boots="#141b21", steel="#9badb5", steelDark="#5d6d75", dark="#101820", hose="#9e9578", hose2="#c4b690", strap="#0f171d", hood="#6d7881", skin="#c9aa8d", visorGlass="#8dc4cd", yellow="#e0b252", yellowDark="#b98f39";
 
-    // platform
-    cylinder([0,-0.17,0],[0,-0.08,0],1.95,1.95,"#1d2d38",null,80);
-    ringXZ(0,-0.06,0,1.80,.02,"#58707c"); ringXZ(0,-0.06,0,1.45,.01,"#2e4852");
+    // platform / turntable
+    cylinder([0,-0.18,0],[0,-0.08,0],2.02,2.02,"#20313c",null,90);
+    cylinder([0,-0.08,0],[0,-0.02,0],1.86,1.86,"#253844",null,90);
+    ringXZ(0,-0.01,0,1.76,.023,"#6b8088");
+    ringXZ(0,-0.01,0,1.42,.015,"#37505b");
+    ringXZ(0,-0.01,0,1.06,.012,"#2b404a");
 
-    // legs and trousers
+    // legs / trousers / knee zones
     for(const s of [-1,1]){
-      cylinder([s*0.30,0.56,0.03],[s*0.32,1.78,0.00],0.23,0.26,suit,"trousers",18);
-      sphere(s*0.31,0.71,0.05,0.24,0.18,0.25,suitLight,"trousers");
-      cylinder([s*0.31,1.03,0.02],[s*0.31,1.08,0.02],0.255,0.255,trim,"trousers",18);
-      cylinder([s*0.31,1.085,0.02],[s*0.31,1.10,0.02],0.255,0.255,trimBright,"trousers",18);
-      box(s*0.30,0.37,0.02,0.40,0.54,0.42,boots,"boots");
-      sphere(s*0.30,0.17,0.22,0.27,0.16,0.42,"#1c2730","boots",1,10,18);
-      box(s*0.30,0.44,0.29,0.36,0.08,0.05,"#425258","boots");
-      box(s*0.30,0.05,0.04,0.44,0.06,0.62,"#10161c","boots");
+      cylinder([s*0.29,0.56,0.02],[s*0.31,1.75,0.00],0.235,0.275,suit,"trousers",20);
+      sphere(s*0.31,1.68,0.03,0.22,0.14,0.24,suitLight,"trousers",1,10,16); // thigh fullness
+      sphere(s*0.31,0.77,0.05,0.22,0.18,0.22,suitPanel,"trousers",1,10,16); // shin/ankle fullness
+      box(s*0.31,1.28,0.14,0.25,0.28,0.16,"#1e272f","trousers"); // knee pad
+      box(s*0.31,1.01,0.25,0.36,0.10,0.06,trim,"trousers");
+      box(s*0.31,1.05,0.28,0.34,0.026,0.06,trimBright,"trousers");
+      box(s*0.31,0.93,0.25,0.36,0.032,0.06,trimBright,"trousers");
+      box(s*0.31,1.51,-0.19,0.18,0.20,0.05,"#2e3942","trousers");
+      // boots
+      box(s*0.30,0.40,0.00,0.40,0.56,0.46,boots,"boots");
+      sphere(s*0.30,0.19,0.24,0.29,0.16,0.44,"#1d2830","boots",1,11,18);
+      box(s*0.30,0.03,0.05,0.46,0.08,0.68,"#0b1015","boots"); // sole
+      box(s*0.30,0.43,0.30,0.34,0.08,0.06,"#42525c","boots"); // toe cap strip
+      box(s*0.30,0.30,-0.18,0.18,0.18,0.05,"#252f37","boots"); // heel block
+      box(s*0.30,0.56,-0.17,0.19,0.18,0.04,"#32404a","boots");
     }
 
-    // torso and jacket
-    sphere(0,2.58,0,0.71,0.80,0.50,suit,"jacket",1,16,24);
-    box(0,2.45,0,1.25,1.40,0.82,suit,"jacket");
-    sphere(0,1.84,0,0.55,0.18,0.38,"#1c2831","jacket",1,10,18);
-    box(0,2.03,0.42,1.21,0.14,0.05,trim,"jacket");
-    box(0,2.08,0.445,1.20,0.03,0.05,trimBright,"jacket");
-    box(0,2.64,0.43,1.24,0.16,0.05,trim,"jacket");
-    box(0,2.70,0.455,1.22,0.035,0.05,trimBright,"jacket");
-    box(0,2.56,0.46,0.08,1.16,0.04,"#16232b","jacket");
-    box(0,2.30,0.46,0.14,0.11,0.06,"#83979d","jacket");
-    // Back visibility panels: make the jacket identifiable from behind.
-    box(-0.41,2.52,-0.430,0.30,0.12,0.06,trim,"jacket");
-    box(-0.41,2.57,-0.465,0.30,0.03,0.06,trimBright,"jacket");
-    box(-0.46,2.02,-0.425,0.28,0.12,0.05,trim,"jacket");
-    box(-0.40,2.27,0.46,0.20,0.22,0.06,"#25313a","jacket");
+    // pelvis / waist transition
+    sphere(0,1.92,0.00,0.46,0.17,0.31,"#202930","jacket",1,10,16);
+    box(0,1.86,0.00,0.88,0.18,0.56,"#1a232b","jacket");
 
-    // shoulders and arms
+    // jacket body
+    sphere(0,2.69,0.00,0.71,0.85,0.53,suit,"jacket",1,18,26);
+    box(0,2.45,0.00,1.22,1.30,0.86,suit,"jacket");
+    sphere(0,1.94,0.02,0.53,0.18,0.39,"#1b252d","jacket",1,10,18); // lower hem
+    box(0,2.56,0.47,0.09,1.20,0.05,"#141d24","jacket"); // zipper placket
+    box(0,2.31,0.49,0.16,0.11,0.05,"#8d9ea7","jacket"); // zip pull / badge
+    box(-0.34,2.33,0.46,0.24,0.22,0.06,"#2a343d","jacket"); // left pocket
+    box(0.34,2.33,0.46,0.24,0.22,0.06,"#2a343d","jacket");  // right pocket
+    box(-0.34,2.45,0.49,0.20,0.03,0.04,"#55636e","jacket");
+    box(0.34,2.45,0.49,0.20,0.03,0.04,"#55636e","jacket");
+    box(-0.44,2.84,0.47,0.17,0.15,0.05,"#313c45","jacket"); // chest radio strap area
+    // reflective bands front
+    box(0,2.65,0.45,1.22,0.15,0.06,trim,"jacket");
+    box(0,2.70,0.49,1.18,0.03,0.06,trimBright,"jacket");
+    box(0,2.58,0.49,1.18,0.03,0.06,trimBright,"jacket");
+    box(0,2.03,0.44,1.17,0.13,0.05,trim,"jacket");
+    box(0,2.08,0.48,1.13,0.03,0.05,trimBright,"jacket");
+    box(0,1.98,0.48,1.13,0.03,0.05,trimBright,"jacket");
+    // reflective bands back
+    box(0,2.63,-0.44,1.02,0.14,0.06,trim,"jacket");
+    box(0,2.68,-0.48,0.98,0.03,0.06,trimBright,"jacket");
+    box(0,2.56,-0.48,0.98,0.03,0.06,trimBright,"jacket");
+    box(0,2.03,-0.43,0.94,0.12,0.05,trim,"jacket");
+    box(0,2.08,-0.47,0.90,0.03,0.05,trimBright,"jacket");
+    box(0,1.98,-0.47,0.90,0.03,0.05,trimBright,"jacket");
+    box(0,3.22,-0.14,0.52,0.18,0.18,"#1e2931","jacket"); // collar back roll
+
+    // shoulders / upper arms / forearms / cuffs
     for(const s of [-1,1]){
-      sphere(s*0.60,3.05,0,0.28,0.28,0.38,suitLight,"jacket");
-      cylinder([s*0.63,3.03,0.0],[s*0.83,2.34,0.07],0.23,0.20,suit,"jacket",18);
-      cylinder([s*0.79,2.56,0.03],[s*0.81,2.47,0.03],0.205,0.205,trim,"jacket",16);
-      cylinder([s*0.84,2.33,0.06],[s*0.99,1.95,0.15],0.18,0.16,suit,"jacket",18);
-      cylinder([s*0.93,2.06,0.13],[s*0.95,2.02,0.14],0.16,0.16,trim,"jacket",14);
-      sphere(s*1.00,1.80,0.17,0.18,0.21,0.20,"#1a242c","gloves",1,10,16);
-      sphere(s*0.87,1.79,0.32,0.08,0.11,0.10,"#223039","gloves",1,8,12);
+      sphere(s*0.62,3.05,0.02,0.28,0.28,0.38,suitLight,"jacket",1,12,18);
+      cylinder([s*0.62,3.02,0.03],[s*0.85,2.36,0.08],0.23,0.20,suit,"jacket",20);
+      sphere(s*0.76,2.66,0.07,0.12,0.12,0.12,"#36454e","jacket",1,8,12); // elbow cap
+      cylinder([s*0.78,2.56,0.06],[s*0.80,2.46,0.06],0.208,0.208,trim,"jacket",18);
+      cylinder([s*0.84,2.34,0.10],[s*0.99,1.95,0.16],0.19,0.16,suit,"jacket",18);
+      cylinder([s*0.92,2.07,0.13],[s*0.94,2.02,0.14],0.162,0.162,trim,"jacket",16);
+      box(s*0.93,2.02,0.18,0.20,0.05,0.08,trimBright,"jacket");
+      sphere(s*1.00,1.79,0.17,0.19,0.22,0.21,"#1b232b","gloves",1,10,16);
+      sphere(s*0.88,1.79,0.32,0.09,0.11,0.10,"#23313a","gloves",1,8,12); // thumb
+      cylinder([s*0.93,1.96,0.16],[s*0.96,1.88,0.17],0.12,0.14,"#626f78","gloves",12); // glove cuff
     }
 
-    // neck, hood and head
-    cylinder([0,3.14,0],[0,3.36,0],0.24,0.22,"#1a252d","jacket",18);
-    cylinder([0,3.17,0],[0,3.40,0],0.32,0.25,hood,"hood",18);
-    sphere(0,3.38,0.04,0.33,0.34,0.29,"#ccaa8d",null,1,12,20);
-    // hood wings around neck / head
-    sphere(-0.22,3.30,0.06,0.12,0.18,0.10,hood,"hood",1,10,14);
-    sphere(0.22,3.30,0.06,0.12,0.18,0.10,hood,"hood",1,10,14);
-    sphere(0,3.18,-0.02,0.18,0.09,0.16,hood,"hood",1,8,14);
-    box(-0.18,3.30,-0.23,0.21,0.16,0.06,hood,"hood");
+    // neck / hood / head
+    cylinder([0,3.14,0.00],[0,3.35,0.00],0.24,0.22,"#192229","jacket",18);
+    cylinder([0,3.16,0.00],[0,3.42,0.00],0.33,0.26,hood,"hood",20);
+    sphere(0,3.39,0.04,0.33,0.35,0.28,skin,null,1,14,20);
+    sphere(0,3.18,-0.04,0.20,0.10,0.16,hood,"hood",1,8,14);
+    sphere(-0.22,3.30,0.00,0.13,0.18,0.11,hood,"hood",1,10,14);
+    sphere(0.22,3.30,0.00,0.13,0.18,0.11,hood,"hood",1,10,14);
+    box(0,3.22,-0.22,0.36,0.20,0.10,hood,"hood");
+    box(-0.18,3.31,-0.23,0.20,0.14,0.06,hood,"hood");
+    box(0.18,3.31,-0.23,0.20,0.14,0.06,hood,"hood");
 
-    // helmet + visor + neck guard
-    cylinder([0,3.82,0],[0,4.02,0],0.40,0.36,"#e5b44b","helmet",24);
-    sphere(0,4.05,0,0.41,0.26,0.38,"#b9913e","helmet",1,14,24);
-    cylinder([0,3.83,0],[0,3.88,0],0.52,0.52,"#ffd97b","helmet",28);
-    cylinder([0,3.92,0],[0,4.22,0],0.07,0.06,"#f8dea0","helmet",18);
-    box(0,3.93,0.41,0.24,0.10,0.045,"#31434b","helmet");
-    box(0,3.84,-0.22,0.34,0.20,0.10,"#c39d4d","helmet");
-    sphere(0,3.63,0.35,0.31,0.22,0.055,"#87c1c7","visor",0.45,10,20);
-    box(0,3.68,0.40,0.53,0.04,0.055,"#445964","visor");
+    // helmet with brim, crest, ear guards and neck cover
+    cylinder([0,3.80,0.01],[0,4.03,0.01],0.42,0.38,yellow,"helmet",26);
+    sphere(0,4.07,0.02,0.43,0.25,0.40,yellowDark,"helmet",1,16,26);
+    cylinder([0,3.82,0.01],[0,3.87,0.01],0.54,0.54,"#f5d98b","helmet",30); // brim ring
+    box(0,3.93,0.42,0.28,0.11,0.05,"#2f424c","helmet"); // front shield mount
+    box(0,4.12,0.02,0.12,0.28,0.10,"#f7e1a9","helmet"); // top crest
+    sphere(-0.33,3.86,0.05,0.09,0.14,0.14,yellowDark,"helmet",1,8,10);
+    sphere(0.33,3.86,0.05,0.09,0.14,0.14,yellowDark,"helmet",1,8,10);
+    box(0,3.84,-0.22,0.36,0.21,0.11,"#c59a46","helmet"); // neck protection rear block
+    sphere(0,3.63,0.36,0.31,0.22,0.06,visorGlass,"visor",0.45,10,20);
+    box(0,3.68,0.41,0.54,0.05,0.06,"#455a65","visor");
+    box(0,3.54,0.36,0.44,0.10,0.04,"#7eb7c2","visor",0.55);
 
-    // SCBA / back
-    box(0,2.62,-0.52,0.80,1.36,0.30,"#101a22","breathing");
-    cylinder([0,2.12,-0.80],[0,3.16,-0.80],0.26,0.25,"#96a8ac","cylinder",24);
-    cylinder([0,3.13,-0.80],[0,3.20,-0.80],0.22,0.18,"#c0c8ca","cylinder",20);
-    cylinder([0,2.10,-0.80],[0,2.16,-0.80],0.22,0.22,"#374851","cylinder",18);
-    box(0,2.55,-1.03,0.25,0.54,0.04,"#2a434f","cylinder");
-    cylinder([-0.45,3.04,0.32],[-0.24,2.34,0.44],0.058,0.058,strap,"breathing",10);
-    cylinder([0.45,3.04,0.32],[0.24,2.34,0.44],0.058,0.058,strap,"breathing",10);
-    box(0,2.30,0.46,0.66,0.08,0.05,strap,"breathing");
-    cylinder([0.18,3.02,-0.84],[0.48,3.15,-0.48],0.065,0.07,"#212c31","breathing",14);
-    cylinder([0.48,3.15,-0.48],[0.34,3.19,0.18],0.07,0.065,"#222f35","breathing",14);
-    cylinder([0.34,3.19,0.18],[0.26,3.45,0.27],0.065,0.062,"#2f3c42","breathing",14);
+    // SCBA backplate / cylinder / regulator / hoses
+    box(0,2.60,-0.56,0.82,1.40,0.32,"#101921","breathing");
+    box(0,3.11,-0.57,0.55,0.18,0.14,"#22343f","breathing");
+    cylinder([0,2.10,-0.83],[0,3.20,-0.83],0.27,0.255,steel,"cylinder",26);
+    cylinder([0,3.15,-0.83],[0,3.22,-0.83],0.225,0.19,"#c6d0d3","cylinder",20);
+    cylinder([0,2.08,-0.83],[0,2.16,-0.83],0.22,0.22,"#3a4a53","cylinder",18);
+    box(0,2.56,-1.07,0.26,0.58,0.05,"#28414d","cylinder");
+    box(0,3.06,-0.54,0.24,0.12,0.14,"#41525c","breathing");
+    cylinder([-0.47,3.04,0.33],[-0.24,2.35,0.44],0.060,0.060,strap,"breathing",10);
+    cylinder([0.47,3.04,0.33],[0.24,2.35,0.44],0.060,0.060,strap,"breathing",10);
+    box(0,2.30,0.45,0.70,0.08,0.05,strap,"breathing"); // waist belt crossing front
+    cylinder([0.18,3.02,-0.86],[0.50,3.15,-0.49],0.07,0.072,"#202b31","breathing",14);
+    cylinder([0.50,3.15,-0.49],[0.36,3.20,0.15],0.072,0.067,"#25343c","breathing",14);
+    cylinder([0.36,3.20,0.15],[0.24,3.47,0.26],0.067,0.060,"#2d3d45","breathing",14);
+    cylinder([-0.18,3.02,-0.86],[-0.40,3.14,-0.48],0.055,0.055,"#1c262c","breathing",12);
 
-    // radio
-    box(-0.49,2.98,0.50,0.23,0.35,0.16,"#17232c","radio");
-    box(-0.49,3.04,0.59,0.14,0.10,0.016,"#88a7af","radio");
-    cylinder([-0.57,3.13,0.51],[-0.59,3.44,0.49],0.022,0.013,"#161e24","radio",9);
-    box(-0.49,2.88,0.58,0.13,0.035,0.018,"#d0b384","radio");
+    // chest radio
+    box(-0.50,2.99,0.51,0.24,0.36,0.17,"#152029","radio");
+    box(-0.50,3.05,0.60,0.15,0.10,0.016,"#8cb2ba","radio");
+    cylinder([-0.58,3.13,0.52],[-0.60,3.47,0.50],0.022,0.012,"#151d23","radio",9);
+    box(-0.50,2.89,0.59,0.13,0.035,0.02,"#d5b98a","radio");
+    box(-0.50,2.97,0.60,0.10,0.018,0.02,"#4d616d","radio");
 
-    // axe on right side
-    cylinder([1.07,0.82,0.30],[1.07,1.80,0.30],0.05,0.05,"#aa8058","axe",10);
-    box(1.09,1.62,0.34,0.43,0.17,0.10,"#8698a0","axe");
-    box(1.28,1.62,0.33,0.12,0.25,0.12,"#b0c1c8","axe");
+    // axe on right side with broader head
+    cylinder([1.08,0.80,0.29],[1.08,1.82,0.29],0.052,0.048,"#ab8158","axe",10);
+    box(1.10,1.63,0.34,0.44,0.17,0.10,"#899ba3","axe");
+    box(1.29,1.63,0.33,0.13,0.26,0.13,"#b2c3ca","axe");
+    box(0.93,1.63,0.34,0.12,0.12,0.08,"#98a8b0","axe");
 
-    // coiled hose on left side
-    ringXY(-1.18,1.12,0.44,0.31,0.08,hose,"hose",46,11);
-    ringXY(-1.18,1.12,0.44,0.16,0.07,"#7f765b","hose",40,10);
-    cylinder([-1.17,1.39,0.51],[-0.94,1.82,0.28],0.07,0.06,"#8b8366","hose",10);
-    cylinder([-1.20,0.88,0.42],[-1.31,0.70,0.34],0.073,0.07,"#a59e84","hose",11);
-    cylinder([-1.31,0.70,0.34],[-1.28,0.38,0.34],0.074,0.071,"#8d866d","hose",11);
+    // coiled hose with hanging end / nozzle
+    ringXY(-1.20,1.12,0.45,0.31,0.085,hose,"hose",46,11);
+    ringXY(-1.20,1.12,0.45,0.18,0.072,hose2,"hose",40,10);
+    cylinder([-1.20,1.39,0.52],[-0.95,1.83,0.29],0.072,0.064,"#908667","hose",10);
+    cylinder([-1.22,0.88,0.43],[-1.34,0.69,0.34],0.075,0.072,"#a79f84","hose",11);
+    cylinder([-1.34,0.69,0.34],[-1.30,0.39,0.34],0.074,0.071,"#8f876d","hose",11);
+    cylinder([-1.30,0.39,0.34],[-1.30,0.20,0.34],0.071,0.068,"#a79f84","hose",11);
+    box(-1.30,0.16,0.34,0.13,0.10,0.13,"#6d7d85","hose"); // nozzle coupling
+
+    // subtle silhouette helpers
+    sphere(0,2.92,-0.14,0.52,0.16,0.33,"#2c363e","jacket",1,10,18);
   }
+
 
   function resize(){ const rect=canvas.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2); const w=Math.round(rect.width*dpr), h=Math.round(rect.height*dpr); if(w!==lastW||h!==lastH){ canvas.width=w; canvas.height=h; lastW=w; lastH=h; if(gl) gl.viewport(0,0,w,h); } return rect; }
 
@@ -440,8 +518,10 @@ body.challenge-active .locked-note{display:block}
   function createHotspots(){
     for(let i=0;i<ITEMS.length;i++){
       const d=ITEMS[i], b=document.createElement("button");
-      b.className="hotspot"; b.type="button"; b.setAttribute("aria-label",`Inspect ${d.en}`); b.title=`Marker ${i+1}`;
-      b.innerHTML = `<span>${String(i+1).padStart(2,'0')}</span>`;
+      b.className="hotspot"; b.type="button";
+      b.setAttribute("aria-label",`Inspect ${d.en}`);
+      // No number, label, or tooltip: students must recognise the physical object.
+      b.textContent = "";
       b.addEventListener("click",()=>onItemClick(d));
       hotspotLayer.appendChild(b); hotspotEls.set(d.id,b);
     }
@@ -452,9 +532,9 @@ body.challenge-active .locked-note{display:block}
     for(let i=0;i<ITEMS.length;i++){
       const d=ITEMS[i], row=document.createElement("button");
       row.className="equipment-row"; row.id=`row-${d.id}`;
-      row.innerHTML=`<span class="index">${String(i+1).padStart(2,'0')}</span><span class="ename">${d.en}</span><span class="check">○</span>`;
+      row.innerHTML=`<span class="ename">${d.en}</span><span class="check">○</span>`;
       row.addEventListener("click",()=>{
-        if(mode!=="explore") { $("quizStatus").textContent="Use the numbered markers on the model during challenges."; return; }
+        if(mode!=="explore") { $("quizStatus").textContent="Use the glowing dots on the model during challenges."; return; }
         setAim(d.az); choose(d);
       });
       cont.appendChild(row);
@@ -477,7 +557,7 @@ body.challenge-active .locked-note{display:block}
   function choose(d){
     selected=d.id; visited.add(d.id);
     $("blankState").classList.add("hidden"); $("detailCard").classList.remove("hidden");
-    $("itemCode").textContent = "GEAR / " + String(ITEMS.indexOf(d)+1).padStart(2,'0');
+    $("itemCode").textContent = "EQUIPMENT PROFILE";
     $("itemCategory").textContent = CATEGORIES[d.cat];
     $("itemEn").textContent = d.en; $("itemPl").textContent = d.pl; $("itemFunction").textContent = d.func; $("itemSentence").textContent = d.sentence;
     updateMarkers();
@@ -508,7 +588,7 @@ body.challenge-active .locked-note{display:block}
       qIdentified=true; qScore++; $("quizStatus").textContent="Correct item! Now classify it."; $("quizStatus").className="quiz-status success";
       $("categoryPanel").classList.remove("hidden"); selected=d.id; visited.add(d.id); choose(d); updateMarkers(); updateScore();
     } else {
-      qMisses++; $("quizStatus").textContent=qMisses>=2 ? `Hint: ${qOrder[qIndex].hint}` : "Not this one. Try another marker."; $("quizStatus").className="quiz-status error";
+      qMisses++; $("quizStatus").textContent=qMisses>=2 ? `Hint: ${qOrder[qIndex].hint}` : "Not this one. Try another glowing dot."; $("quizStatus").className="quiz-status error";
     }
   }
 
@@ -534,10 +614,15 @@ body.challenge-active .locked-note{display:block}
     $("challengeSidebar").classList.remove("hidden");
     $("quizSummary").classList.add("hidden");
     visited.clear(); selected=null; qScore=0; qIndex=0; qIdentified=false; qCategoryDone=false;
-    qOrder=[...ITEMS].sort(()=>Math.random()-0.5);
+    // Fisher-Yates shuffle: a fresh uniformly shuffled question order each new run.
+    qOrder=[...ITEMS];
+    for(let i=qOrder.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [qOrder[i],qOrder[j]]=[qOrder[j],qOrder[i]];
+    }
     $("equipmentList").style.opacity="1";
     $("challengeHeading").textContent = which==="find" ? "FIND MODE" : "QUIZ MODE";
-    $("challengeIntro").textContent = which==="find" ? "Find the correct numbered marker on the model." : "Find the item, then classify it correctly.";
+    $("challengeIntro").textContent = which==="find" ? "Find the correct glowing dot on the model." : "Find the item, then classify it correctly.";
     $("promptLabel").textContent = which==="find" ? "LOCATE THIS ITEM" : "FIND THIS ITEM";
     $("finalScoreMax").textContent = which==="find" ? `/ ${ITEMS.length} POINTS` : `/ ${ITEMS.length*2} POINTS`;
     prepareQuestion();
@@ -550,7 +635,7 @@ body.challenge-active .locked-note{display:block}
     $("progressLabel").textContent=`QUESTION ${qIndex+1} / ${qOrder.length}`;
     $("progressBar").style.width=`${qIndex/qOrder.length*100}%`;
     $("quizStatus").className="quiz-status";
-    $("quizStatus").textContent = mode==="find" ? "Click the correct numbered marker on the model." : "Click the corresponding equipment marker.";
+    $("quizStatus").textContent = mode==="find" ? "Click the correct glowing dot on the model." : "Click the correct glowing dot.";
     $("categoryPanel").classList.add("hidden"); $("nextQuestion").classList.add("hidden"); $("restartChallenge").classList.add("hidden");
     for(const b of $("categoryPanel").querySelectorAll("button")){ b.classList.remove("correct","incorrect"); b.disabled=false; }
     setAim(0.16); updateMarkers(); updateScore();
