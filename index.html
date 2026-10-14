@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09111a">
+  <meta name="description" content="Interactive firefighter equipment explorer, find-the-item game and quiz for professional English students.">
+  <title>Firefighter Equipment Lab 2.0 | SPBW1</title>
+  <style>
+:root{color-scheme:dark;--bg:#090e16;--panel:#0e1723;--border:#283443;--muted:#8c9bab;--text:#eaf0f5;--accent:#f7c46e;--orange:#ef9359;--cyan:#74d5d6;--green:#92d1ae;--red:#e99482;--font:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font)}body{overscroll-behavior:none}.app{display:flex;flex-direction:column;min-height:100vh}.topbar{height:78px;border-bottom:1px solid #2e3945;background:#0b121d;display:flex;align-items:center;justify-content:space-between;padding:0 28px;gap:12px;position:relative;z-index:3}.identity{display:flex;gap:15px;align-items:center}.brandmark{background:#e9ae65;color:#111b25;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:28px;line-height:1}.identity div{display:flex;flex-direction:column;gap:4px}.kicker,.eyebrow,.tiny-heading,.version,.status-text,.panel-head,#foundCount,.stage-hud,.orbit-tip,.camera-actions,.model-label,.category-tag,.item-code,.scoreline,.badge-finished,.footer{font-family:var(--font);letter-spacing:1.5px;font-weight:750;font-size:10px}.identity strong{font-size:16px;letter-spacing:1.15px}.identity em{font-style:normal;color:var(--accent)}.kicker{color:#7c91a3;font-size:9px}.topbar-right{display:flex;align-items:center;gap:10px;color:#8d9fae}.dot-live{height:6px;width:6px;background:#b4d5b5;border-radius:50%;box-shadow:0 0 12px #b4d5b5}.version{padding:8px 11px;border:1px solid #34424f;margin-left:18px;border-radius:4px}.workspace{flex:1;display:grid;grid-template-columns:minmax(255px,300px) minmax(400px,1fr) minmax(274px,334px);min-height:655px;height:calc(100vh - 116px);max-height:1050px}.panel{background:var(--panel);position:relative;min-height:0;overflow:auto;scrollbar-color:#354657 transparent;scrollbar-width:thin}.left-panel{border-right:1px solid var(--border);padding:32px 24px}.eyebrow{color:var(--accent);font-size:9px;letter-spacing:1.8px}.left-panel h1{font-size:32px;letter-spacing:-1.5px;line-height:1.13;font-weight:650;margin:21px 0 15px}.left-panel h1 span{color:#e4ad70}.lede,.blank-state p,.quiz-sidebar>p{line-height:1.65;color:#9aa9b7;font-size:13px}.lede{margin-bottom:28px}.segmented{display:flex;background:#0a111a;padding:4px;border:1px solid #293847;border-radius:8px;gap:4px}.mode{border:0;border-radius:5px;background:transparent;color:#899bab;flex:1;padding:11px 5px;cursor:pointer;font-size:10px;font-weight:800;letter-spacing:.7px}.mode.active{background:#263340;color:var(--text);box-shadow:0 2px 6px #0005}.tiny-heading{font-size:10px;color:#7d94a7}.explore-sidebar,.quiz-sidebar{padding-top:32px}.learning-point{display:flex;gap:15px;align-items:center;color:#c3cfda;font-size:12px;line-height:1.5;margin:15px 0}.learning-point span{color:#e4a969;font-family:monospace}.mini-divider{height:1px;background:#293743;margin:31px 0 25px}.legend{display:flex;gap:11px;align-items:center;font-size:12px;color:#b4c5d0;margin-top:16px}.legend b{margin-left:auto;color:#74889b}.legend-dot{height:9px;width:9px;border-radius:50%;flex-shrink:0}.cat-clothing{background:#e4bf73}.cat-equipment{background:#74c8ce}.cat-tool{background:#ed9d7f}.cat-communication{background:#aa9ded}.source-note{display:flex;gap:10px;margin-top:31px;border-top:1px solid #2c3945;padding-top:19px}.source-note>span{color:#f4bc7b}.source-note p{font-size:11px;color:#7d90a3;line-height:1.6;margin:0}.source-note strong{color:#bdcad4}.stage{min-width:0;position:relative;overflow:hidden;background:radial-gradient(ellipse at 49% 45%,#1c3240 0,#101e2b 42%,#0b1520 76%,#08111b 100%)}.stage:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 0,transparent 94%,#b5d9e20c 95%,transparent 96%),linear-gradient(0deg,transparent 0,transparent 94%,#b5d9e209 95%,transparent 96%);background-size:48px 48px;opacity:.5}.stage:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 100px #06111b8c}.stage-hud{position:absolute;z-index:2;color:#8aa0b1;display:flex;flex-direction:column;gap:9px;font-size:9px}.stage-hud strong{color:#d1e0e8}.top-left{left:27px;top:28px}.top-right{right:26px;top:28px;text-align:right}.coordinate{color:#d2bc96}#view3d{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;outline:0}#view3d:active{cursor:grabbing}.hotspot-layer{position:absolute;inset:0;pointer-events:none;z-index:4}.hotspot{position:absolute;pointer-events:auto;border:1px solid #f9db9c;border-radius:50%;width:31px;height:31px;background:#131e26d9;color:#fff4d5;transform:translate(-50%,-50%);display:flex;justify-content:center;align-items:center;cursor:pointer;box-shadow:0 0 0 5px #f0c17718,0 0 24px #efb96b3b;transition:background .15s,box-shadow .15s,scale .15s;user-select:none;font-weight:700;font-size:11px}.hotspot:hover,.hotspot.active{background:#f3bd70;color:#17202b;box-shadow:0 0 0 8px #eab76b2d,0 0 38px #f3c9868a;scale:1.12}.hotspot.visited:not(.active){border-color:#a5d8be;color:#a9e4c7}.hotspot.hidden-marker{display:none}.hotspot .micro-label{position:absolute;pointer-events:none;white-space:nowrap;left:39px;top:4px;font-size:9px;font-weight:800;letter-spacing:1px;color:#cad6df;background:#111d27ed;padding:4px 6px;border:1px solid #3c4b53;border-radius:3px;opacity:0;transition:opacity .2s}.hotspot:hover .micro-label,.hotspot.active .micro-label{opacity:1}.stage-bottom{z-index:5;position:absolute;bottom:30px;left:27px;right:25px;display:flex;align-items:end;justify-content:space-between;gap:10px}.orbit-tip{color:#97acbb;font-size:9px}.orbit-icon{font-size:23px;margin-right:8px;color:var(--accent);vertical-align:middle}.divider-dot{padding:0 5px}.camera-actions{display:flex;gap:5px}.camera-actions button{background:#13212ed9;color:#cad8e1;border:1px solid #3b5162;border-radius:5px;font-size:10px;padding:11px 13px;cursor:pointer;font-weight:750;letter-spacing:.4px}.camera-actions button:hover{border-color:#b8a273;background:#283645}.model-label{position:absolute;z-index:3;bottom:84px;left:27px;font-size:9px;color:#617b8d}.model-label span{color:#d7b87a}.right-panel{padding:27px 20px;border-left:1px solid var(--border);display:flex;flex-direction:column}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--border)}#foundCount{font-size:9px;color:#93a6b4}.explore-content{min-height:285px;display:flex;flex-direction:column}.blank-state{padding-top:55px;text-align:center}.blank-icon{display:block;font-size:34px;color:#d6b580;margin-bottom:14px}.blank-state h2{font-size:20px;font-weight:600;margin:12px 0}.blank-state p{max-width:248px;margin:0 auto}.detail-card{padding:26px 0 20px}.detail-top{display:flex;align-items:center;justify-content:space-between;gap:5px}.item-code{color:#7a90a0}.category-tag{border:1px solid #bba87955;background:#5e503933;color:#e9c685;border-radius:3px;padding:5px;font-size:8px;letter-spacing:.5px}.detail-card h2{font-size:30px;letter-spacing:-1px;margin:26px 0 4px}.item-pl{color:#c2cbd1;font-size:14px}.detail-divider{background:#33434e;height:1px;margin:25px 0 24px}.detail-card>p{font-size:13px;line-height:1.65;color:#c4d2dc}.sentence-box{padding:14px;border:1px solid #344452;background:#122333;border-radius:7px;margin-top:24px}.sentence-box p{font-size:12px;line-height:1.55;color:#e2d1ae}.secondary-button,.primary-button,.quiet-button{cursor:pointer;font-weight:800;letter-spacing:1px;font-size:10px;border-radius:5px}.secondary-button{width:100%;border:1px solid #46576a;background:#1b2c3b;color:#d5e3ec;padding:15px;margin-top:18px}.secondary-button span,.primary-button span{float:right}.equipment-list-head{display:flex;justify-content:space-between;border-top:1px solid #2a3946;padding:20px 0 10px;margin-top:auto;align-items:center}.dot-grid{color:#8c9caa;letter-spacing:2px}.equipment-list{display:flex;flex-direction:column;gap:4px}.equipment-row{display:flex;align-items:center;text-align:left;background:none;border:1px solid transparent;color:#b2c1ce;cursor:pointer;padding:8px 8px 8px 0;border-radius:5px;font-size:12px;gap:9px}.equipment-row:hover,.equipment-row.selected{background:#172735;border-color:#324758;color:#f2efe8}.equipment-row .index{color:#748a9d;font-size:10px;font-weight:700;min-width:22px}.equipment-row .ename{flex:1}.equipment-row .check{font-size:13px;color:#617387}.equipment-row.visited .check{color:#9ce1c1}.bottom-source{margin-top:18px;border-top:1px solid #283743;padding-top:15px;font-size:9px;letter-spacing:.45px;color:#718395;line-height:1.7}.footer{height:38px;background:#090f17;border-top:1px solid #2b3844;display:flex;align-items:center;justify-content:space-between;padding:0 27px;color:#596f81;font-size:9px;gap:8px}.hidden{display:none!important}.quiz-sidebar>p{font-size:12px}.scoreline{display:flex;justify-content:space-between;margin:25px 0 12px;color:#99a9b9}.scoreline strong{color:#efd194}.progress-track{height:6px;background:#283946;border-radius:6px;overflow:hidden}.progress-track div{height:100%;width:0;background:#d4b77a;transition:width .2s}.prompt-card{border:1px solid #876c414f;background:linear-gradient(145deg,#2d2d25,#17242d);padding:17px;margin:22px 0;border-radius:6px}.prompt-card>span{font-size:10px;color:#dec289;letter-spacing:1.2px;font-weight:700}.prompt-card h2{font-size:24px;margin:11px 0 7px;line-height:1.2}.prompt-card p{color:#acb6bf;font-size:12px;margin:0;line-height:1.5}.quiz-status{font-size:12px;color:#9eb0bf;line-height:1.5;min-height:36px}.quiz-status.success{color:#a8deb8}.quiz-status.error{color:#eeb19b}.category-panel{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:24px 0}.category-panel .tiny-heading{grid-column:span 2}.category-panel button{font-size:10px;min-height:48px;background:#1a2b39;color:#d9e5ef;border:1px solid #425464;border-radius:5px;cursor:pointer;padding:8px}.category-panel button:hover{border-color:#efd29b;background:#2b3a45}.category-panel button.correct{border-color:#82d6a4;background:#1e4e40}.category-panel button.incorrect{border-color:#e69a8e;background:#533434}.primary-button{background:#eec27c;color:#15202c;width:100%;padding:15px;border:none;margin-top:13px}.quiet-button{background:transparent;border:1px solid #415469;color:#aebdcb;width:100%;padding:13px;margin-top:12px}.quiz-summary{text-align:center;padding:38px 8px 24px}.badge-finished{border:1px solid #c2a66a66;background:#5a4b2430;padding:8px;border-radius:4px;color:#f3d297}.quiz-summary h2{font-size:24px;margin:28px 0}.final-score{display:flex;align-items:baseline;justify-content:center;gap:9px}.final-score strong{font-size:65px;font-weight:600;color:#f0c784}.final-score span{font-size:12px;color:#8c9eac}.quiz-summary p{line-height:1.6;color:#afbec9;font-size:13px;margin-bottom:25px}.model-error{position:absolute;left:15%;right:15%;top:45%;z-index:10;background:#451e2b;padding:30px;color:#fbd6d5;border:1px solid #b86469;border-radius:7px}
+@media(max-width:1140px){.workspace{grid-template-columns:minmax(215px,250px) minmax(320px,1fr) minmax(250px,280px)}.left-panel{padding:27px 17px}.right-panel{padding:24px 15px}.left-panel h1{font-size:28px}.mode{font-size:9px}}
+@media(max-width:850px){.workspace{height:auto;max-height:none;grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(570px,65vh) auto}.left-panel{grid-column:1/3;border-right:0;border-bottom:1px solid #293a48;padding:22px}.left-panel h1{margin:8px 0;font-size:26px}.lede{margin:5px 0 12px}.segmented{max-width:400px}.explore-sidebar{display:none}.quiz-sidebar{padding-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.quiz-sidebar>.tiny-heading,.quiz-sidebar>p,.scoreline,.progress-track,.quiz-status,.category-panel,.primary-button,.quiet-button{grid-column:span 2}.prompt-card{margin:7px 0;grid-column:span 2}.stage{grid-column:1/3;min-height:560px}.right-panel{grid-column:1/3;border-left:0;border-top:1px solid var(--border)}.equipment-list{display:grid;grid-template-columns:1fr 1fr}.blank-state{padding:15px 0}.explore-content{min-height:150px}.footer{font-size:7px}.stage-hud{top:19px}}
+@media(max-width:500px){.topbar{height:72px;padding:0 13px}.identity strong{font-size:12px}.identity{gap:8px}.brandmark{width:29px;height:29px;font-size:19px}.status-text,.version{display:none}.workspace{grid-template-rows:auto 520px auto}.left-panel{padding:17px}.stage{min-height:520px}.stage-hud{font-size:8px}.top-left{left:14px}.top-right{right:14px}.stage-bottom{left:12px;right:12px;bottom:15px;flex-direction:column;align-items:stretch}.orbit-tip{font-size:8px}.camera-actions{justify-content:space-between}.camera-actions button{flex:1}.model-label{display:none}.equipment-list{grid-template-columns:1fr 1fr}.equipment-row{font-size:11px}.footer{padding:0 12px}.footer span:last-child{display:none}.hotspot{height:29px;width:29px}.hotspot .micro-label{display:none}}
+.v2{display:inline-block;margin-left:6px;color:#f3c27d;font-size:12px;letter-spacing:1.5px}
+.identity strong{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.mode{white-space:nowrap}
+.hotspot{font-size:10px}
+.hotspot span{display:block;transform:translateY(.5px)}
+.prompt-card h2{min-height:56px}
+.camera-actions{flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:850px){.segmented{max-width:520px}}
+
+/* 2.1: protect the spatial hunt from the checklist spoilers */
+.locked-note{display:none;padding:24px 14px;border:1px dashed #516277;border-radius:8px;background:#12202e;color:#adc2d2;font-size:11px;line-height:1.65;letter-spacing:.6px}
+body.challenge-active .equipment-list{display:none}
+body.challenge-active .locked-note{display:block}
+.hotspot.active{outline:2px solid #fff4ce;outline-offset:2px}
+
+</style>
+  
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="identity">
+        <span class="brandmark" aria-hidden="true">✳</span>
+        <div>
+          <span class="kicker">SPBW1 · PROFESSIONAL ENGLISH · LESSON 03</span>
+          <strong>FIREFIGHTER <em>EQUIPMENT LAB</em> <span class="v2">2.1</span></strong>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="dot-live"></span>
+        <span class="status-text">INTERACTIVE TRAINING MODULE</span>
+        <span class="version">BUILD / 02</span>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="left-panel panel" aria-label="Learning panel">
+        <div class="eyebrow">SENDUR 8.2 · FIRE BRIGADE</div>
+        <h1>Inspect the<br><span>firefighter.</span></h1>
+        <p class="lede">Rotate the model, find hidden numbered markers and learn the English names of essential firefighter equipment.</p>
+
+        <div class="segmented" role="group" aria-label="Learning mode">
+          <button id="exploreMode" class="mode active" aria-pressed="true">01 · EXPLORE</button>
+          <button id="findMode" class="mode" aria-pressed="false">02 · FIND</button>
+          <button id="quizMode" class="mode" aria-pressed="false">03 · QUIZ</button>
+        </div>
+
+        <section class="explore-sidebar" id="exploreSidebar">
+          <div class="tiny-heading">LEARNING GOALS</div>
+          <div class="learning-point"><span>01</span> Identify numbered equipment markers</div>
+          <div class="learning-point"><span>02</span> Match English and Polish names</div>
+          <div class="learning-point"><span>03</span> Classify equipment correctly</div>
+          <div class="mini-divider"></div>
+          <div class="tiny-heading">CATEGORIES</div>
+          <div class="legend"><span class="legend-dot cat-clothing"></span>Protective clothing <b id="clothCount">7</b></div>
+          <div class="legend"><span class="legend-dot cat-equipment"></span>Rescue equipment <b id="equipCount">3</b></div>
+          <div class="legend"><span class="legend-dot cat-tool"></span>Tools <b id="toolCount">1</b></div>
+          <div class="legend"><span class="legend-dot cat-communication"></span>Communication <b id="commCount">1</b></div>
+          <div class="source-note"><span>ℹ</span><p><strong>Training model, not an official PPE specification.</strong> This stylised 3D firefighter is designed for classroom vocabulary practice and equipment classification.</p></div>
+        </section>
+
+        <section id="challengeSidebar" class="quiz-sidebar hidden" aria-live="polite">
+          <div class="tiny-heading" id="challengeHeading">TRAINING CHALLENGE</div>
+          <p id="challengeIntro">Find equipment by rotating the model. Some numbered markers are hidden on the back and sides.</p>
+          <div class="scoreline"><span id="progressLabel">QUESTION 1 / 12</span><strong id="scoreLabel">0 / 12 PTS</strong></div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <div class="prompt-card"><span id="promptLabel">FIND THIS ITEM</span><h2 id="quizTarget">Helmet</h2><p id="quizHint">Rotate the model to locate it.</p></div>
+          <div id="quizStatus" class="quiz-status" aria-live="polite">Click the correct numbered marker on the model.</div>
+          <div id="categoryPanel" class="category-panel hidden">
+            <div class="tiny-heading">CHOOSE ITS CATEGORY</div>
+            <button data-category="clothing">Protective clothing</button>
+            <button data-category="equipment">Rescue equipment</button>
+            <button data-category="tool">Tools</button>
+            <button data-category="communication">Communication</button>
+          </div>
+          <button id="nextQuestion" class="primary-button hidden">NEXT ITEM <span>↗</span></button>
+          <button id="restartChallenge" class="quiet-button hidden">RESTART</button>
+        </section>
+      </aside>
+
+      <main class="stage" aria-label="Three-dimensional interactive firefighter model">
+        <div class="stage-hud top-left"><span class="corner-notation">MODEL / <strong>FIREFIGHTER PPE TRAINER</strong></span><span>REAL-TIME 3D · DRAG TO ORBIT</span></div>
+        <div class="stage-hud top-right"><span class="coordinate" id="orientationLabel">FRONT VIEW / 000°</span></div>
+        <canvas id="view3d" aria-label="Interactive rotatable three-dimensional firefighter. Use mouse or touch to rotate." tabindex="0"></canvas>
+        <div id="hotspots" class="hotspot-layer" aria-label="Interactive numbered equipment markers"></div>
+        <div id="modelError" class="model-error hidden">Your browser could not start the 3D model. Try another modern browser with WebGL enabled.</div>
+        <div class="stage-bottom">
+          <div class="orbit-tip"><span class="orbit-icon">⤾</span> DRAG TO ROTATE <span class="divider-dot">·</span> SCROLL TO ZOOM</div>
+          <div class="camera-actions">
+            <button id="frontView" title="Front">FRONT</button>
+            <button id="leftView" title="Left side">LEFT</button>
+            <button id="rightView" title="Right side">RIGHT</button>
+            <button id="backView" title="Back">BACK</button>
+            <button id="resetView" title="Reset view">RESET ↻</button>
+          </div>
+        </div>
+        <div class="model-label">MODEL 002.1 <span>•</span> FIREFIGHTER EQUIPMENT LAB</div>
+      </main>
+
+      <aside class="right-panel panel" aria-label="Equipment details">
+        <div class="panel-head"><span class="eyebrow">EQUIPMENT INDEX</span><span id="foundCount">00 / 12 IDENTIFIED</span></div>
+        <div id="exploreContent" class="explore-content">
+          <div class="blank-state" id="blankState"><span class="blank-icon">⌖</span><h2>Select a number.</h2><p>Click one of the numbered markers on the 3D firefighter to reveal the English name, Polish translation and function of the item.</p></div>
+          <div id="detailCard" class="detail-card hidden" aria-live="polite">
+            <div class="detail-top"><span id="itemCode" class="item-code">EQ-01</span><span id="itemCategory" class="category-tag">PROTECTIVE CLOTHING</span></div>
+            <h2 id="itemEn">Helmet</h2><div id="itemPl" class="item-pl">hełm strażacki</div>
+            <div class="detail-divider"></div><span class="tiny-heading">WHAT IS IT USED FOR?</span><p id="itemFunction">It protects the head.</p>
+            <div class="sentence-box"><span class="tiny-heading">SAY IT IN ENGLISH</span><p id="itemSentence">A helmet protects the firefighter's head.</p></div>
+            <button id="anotherItem" class="secondary-button">EXPLORE ANOTHER <span>↗</span></button>
+          </div>
+        </div>
+        <div id="quizSummary" class="quiz-summary hidden"><span class="badge-finished">MISSION COMPLETE</span><h2 id="summaryTitle">Training complete.</h2><div class="final-score"><strong id="finalScore">0</strong><span id="finalScoreMax">/ 12 POINTS</span></div><p id="finalMessage">Well done!</p><button id="replayQuiz" class="primary-button">TRY AGAIN ↗</button></div>
+        <div class="equipment-list-head"><span class="tiny-heading">EQUIPMENT CHECKLIST</span><span class="dot-grid">•••</span></div>
+        <div id="equipmentList" class="equipment-list"></div>
+        <div id="lockedNote" class="locked-note">INDEX LOCKED WHILE SEARCHING. ROTATE THE MODEL TO FIND THE NUMBERED ITEMS.</div>
+        <div class="bottom-source">SOURCE: SENDUR &amp; WARECKA · 8.2 FIRE BRIGADE<br>LEARNING ACTIVITY: SPBW1 / LESSON 03 / VERSION 2.1</div>
+      </aside>
+    </div>
+
+    <footer class="footer"><span>BUILT FOR CLASSROOM LEARNING · NO ACCOUNT REQUIRED</span><span>OFFLINE-READY / NUMBERED MARKERS / EXPLORE + FIND + QUIZ</span></footer>
+  </div>
+<script>
+(() => {
+  "use strict";
+
+  // Marker numbers are deliberately distributed across the entire model.
+  // Front: 02, 04, 09. Left: 05, 07, 11. Right: 08.
+  // Back: 01, 03, 06, 10, 12.
+  const ITEMS = [
+    { id:"jacket", en:"Protective jacket", pl:"kurtka ochronna", cat:"clothing", func:"It protects the upper body and improves visibility thanks to reflective bands.", sentence:"The protective jacket helps protect the firefighter from heat.", point:[-0.50,2.43,-0.45], az:Math.PI, hint:"Look at the upper back, to the side of the breathing apparatus." },
+    { id:"radio", en:"Radio", pl:"radiostacja", cat:"communication", func:"It allows firefighters to communicate with the crew and the incident commander.", sentence:"The firefighter uses a radio to communicate with the crew.", point:[-0.54,2.98,0.62], az:0.0, hint:"Look high on the front of the jacket." },
+    { id:"boots", en:"Fire boots", pl:"buty strażackie", cat:"clothing", func:"They protect the feet and provide grip in dangerous conditions.", sentence:"Fire boots protect the feet during rescue operations.", point:[0.32,0.34,-0.25], az:Math.PI, hint:"Check the back of the lower legs near the heels." },
+    { id:"visor", en:"Visor", pl:"przyłbica / osłona twarzy", cat:"clothing", func:"It protects the face and eyes against heat, sparks and flying particles.", sentence:"The visor protects the firefighter's face.", point:[0.24,3.71,0.44], az:0.0, hint:"It is attached to the front of the helmet." },
+    { id:"hose", en:"Hose", pl:"wąż pożarniczy", cat:"equipment", func:"It carries water or extinguishing agents during firefighting operations.", sentence:"A hose is used to direct water onto a fire.", point:[-1.24,1.10,0.47], az:-Math.PI/2, hint:"Look near the firefighter's left side, below the hand." },
+    { id:"breathing", en:"Breathing apparatus", pl:"aparat oddechowy", cat:"equipment", func:"It provides breathable air in smoke-filled or otherwise unsafe atmospheres.", sentence:"Firefighters use breathing apparatus to breathe in smoke-filled areas.", point:[0.40,2.94,-0.66], az:Math.PI, hint:"Look at the breathing equipment carried on the back." },
+    { id:"gloves", en:"Protective gloves", pl:"rękawice ochronne", cat:"clothing", func:"They protect the hands from heat, sharp edges and other hazards.", sentence:"Protective gloves keep the firefighter's hands safer.", point:[-1.07,1.85,0.20], az:-Math.PI/2, hint:"Look at the left hand from the side." },
+    { id:"axe", en:"Axe", pl:"siekiera / topór strażacki", cat:"tool", func:"It is a hand tool used for some types of forcible entry and clearing obstacles.", sentence:"Firefighters may use an axe to clear an obstacle.", point:[1.26,1.60,0.25], az:Math.PI/2, hint:"Look at the right side of the firefighter." },
+    { id:"helmet", en:"Helmet", pl:"hełm strażacki", cat:"clothing", func:"It protects the firefighter's head from heat, impact and falling objects.", sentence:"A firefighter wears a helmet to protect the head.", point:[0,4.27,0.23], az:0.0, hint:"Look at the top front of the firefighter." },
+    { id:"cylinder", en:"Air cylinder", pl:"butla powietrzna", cat:"equipment", func:"It stores compressed air for the breathing apparatus.", sentence:"The air cylinder is mounted on the firefighter's back.", point:[-0.02,2.34,-1.14], az:Math.PI, hint:"Look at the large cylinder in the centre of the firefighter's back." },
+    { id:"trousers", en:"Overtrousers", pl:"spodnie ochronne", cat:"clothing", func:"They protect the legs and are worn as part of the firefighter's protective clothing.", sentence:"The firefighter puts on overtrousers before responding to a call.", point:[-0.55,1.28,-0.09], az:-Math.PI/2, hint:"Check the outside of the left leg." },
+    { id:"hood", en:"Protective hood", pl:"kaptur ochronny", cat:"clothing", func:"It protects the neck and areas of the head that are not covered by the helmet.", sentence:"A protective hood protects the neck and ears.", point:[-0.20,3.28,-0.22], az:Math.PI, hint:"Look behind the neck, beneath the helmet." }
+  ];
+
+  const CATEGORIES = {
+    clothing: "PROTECTIVE CLOTHING",
+    equipment: "RESCUE EQUIPMENT",
+    tool: "TOOLS",
+    communication: "COMMUNICATION"
+  };
+
+  const $ = id => document.getElementById(id);
+  const counts = ITEMS.reduce((a,i)=>(a[i.cat]++,a), {clothing:0,equipment:0,tool:0,communication:0});
+
+  let canvas, hotspotLayer, gl, ctx2d, program, aPosition, aNormal, uVP, uColor, uAlpha;
+  let meshes = [], hotspotEls = new Map(), selected = null, visited = new Set();
+  let vp = null, cameraAz = 0.16, targetAz = 0.16, cameraEl = -0.04, targetEl = -0.04, radius = 8.1, targetRadius = 8.1;
+  let lastW = 0, lastH = 0, lastFallback = -1;
+
+  let mode = "explore"; // explore | find | quiz
+  let qOrder = [], qIndex = 0, qScore = 0, qIdentified = false, qCategoryDone = false, qMisses = 0;
+
+  function clamp(v,min,max){ return Math.max(min, Math.min(max,v)); }
+  function smooth(a,b,k){ return a + (b-a)*k; }
+  function col(hex){ hex = hex.replace("#",""); return [parseInt(hex.slice(0,2),16)/255, parseInt(hex.slice(2,4),16)/255, parseInt(hex.slice(4,6),16)/255]; }
+  function vsub(a,b){ return [a[0]-b[0], a[1]-b[1], a[2]-b[2]]; }
+  function cross(a,b){ return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; }
+  function vnorm(v){ const l=Math.hypot(v[0],v[1],v[2]) || 1; return [v[0]/l,v[1]/l,v[2]/l]; }
+  function matrixMultiply(a,b){ const o=new Float32Array(16); for(let c=0;c<4;c++) for(let r=0;r<4;r++) o[c*4+r]=a[0*4+r]*b[c*4+0]+a[1*4+r]*b[c*4+1]+a[2*4+r]*b[c*4+2]+a[3*4+r]*b[c*4+3]; return o; }
+  function perspective(fov,asp,n,f){ const z=1/Math.tan(fov/2),o=new Float32Array(16); o[0]=z/asp; o[5]=z; o[10]=(f+n)/(n-f); o[11]=-1; o[14]=2*f*n/(n-f); return o; }
+  function lookAt(eye,center,up){ const z=vnorm(vsub(eye,center)),x=vnorm(cross(up,z)),y=cross(z,x); return new Float32Array([x[0],y[0],z[0],0,x[1],y[1],z[1],0,x[2],y[2],z[2],0,-(x[0]*eye[0]+x[1]*eye[1]+x[2]*eye[2]),-(y[0]*eye[0]+y[1]*eye[1]+y[2]*eye[2]),-(z[0]*eye[0]+z[1]*eye[1]+z[2]*eye[2]),1]); }
+  function clipPoint(p){ const x=p[0],y=p[1],z=p[2]; const w=vp[3]*x+vp[7]*y+vp[11]*z+vp[15]; return { x:(vp[0]*x+vp[4]*y+vp[8]*z+vp[12])/(w||1), y:(vp[1]*x+vp[5]*y+vp[9]*z+vp[13])/(w||1), w }; }
+  function shader(type, source){ const sh=gl.createShader(type); gl.shaderSource(sh,source); gl.compileShader(sh); if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(sh)); return sh; }
+
+  function initGL(){
+    gl = canvas.getContext("webgl", { antialias:true, alpha:true, preserveDrawingBuffer:true }) || canvas.getContext("experimental-webgl");
+    if(!gl){
+      ctx2d = canvas.getContext("2d");
+      if(!ctx2d){ $("modelError").classList.remove("hidden"); return false; }
+      canvas.dataset.renderMode = "software-3d";
+      return false;
+    }
+    const vs = `attribute vec3 position; attribute vec3 normal; uniform mat4 vp; varying float light; void main(){ vec3 n = normalize(normal); vec3 L = normalize(vec3(-0.5, 0.95, 0.8)); light = 0.30 + max(dot(n,L),0.0) * 0.72; gl_Position = vp * vec4(position,1.0); }`;
+    const fs = `precision mediump float; uniform vec3 color; uniform float alpha; varying float light; void main(){ gl_FragColor = vec4(color * light, alpha); }`;
+    program = gl.createProgram(); gl.attachShader(program, shader(gl.VERTEX_SHADER, vs)); gl.attachShader(program, shader(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(program);
+    if(!gl.getProgramParameter(program, gl.LINK_STATUS)){ $("modelError").classList.remove("hidden"); return false; }
+    aPosition = gl.getAttribLocation(program,"position");
+    aNormal = gl.getAttribLocation(program,"normal");
+    uVP = gl.getUniformLocation(program,"vp");
+    uColor = gl.getUniformLocation(program,"color");
+    uAlpha = gl.getUniformLocation(program,"alpha");
+    gl.enable(gl.DEPTH_TEST); gl.enable(gl.CULL_FACE); gl.clearColor(0,0,0,0);
+    return true;
+  }
+
+  function builder(){
+    const v = [];
+    function tri(a,b,c,ns){ const n = ns || vnorm(cross(vsub(b,a),vsub(c,a))); for(const p of [a,b,c]) v.push(p[0],p[1],p[2],...n); }
+    return { v, tri, quad(a,b,c,d){ tri(a,b,c); tri(a,c,d); } };
+  }
+  function upload(build,color,id=null,alpha=1){
+    const verts = new Float32Array(build.v); let b=null;
+    if(gl){ b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,b); gl.bufferData(gl.ARRAY_BUFFER, verts, gl.STATIC_DRAW); }
+    meshes.push({ b, verts, count: build.v.length/6, color: col(color), id, alpha });
+  }
+  function box(cx,cy,cz,sx,sy,sz,color,id,alpha=1){
+    const b=builder(),x0=cx-sx/2,x1=cx+sx/2,y0=cy-sy/2,y1=cy+sy/2,z0=cz-sz/2,z1=cz+sz/2;
+    b.quad([x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1]);
+    b.quad([x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0]);
+    b.quad([x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0]);
+    b.quad([x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1]);
+    b.quad([x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0]);
+    b.quad([x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1]);
+    upload(b,color,id,alpha);
+  }
+  function sphere(cx,cy,cz,rx,ry,rz,color,id,alpha=1,lat=12,lon=20){
+    const b=builder();
+    function p(u,v){ return [cx+rx*Math.sin(u)*Math.cos(v), cy+ry*Math.cos(u), cz+rz*Math.sin(u)*Math.sin(v)]; }
+    for(let i=0;i<lat;i++) for(let j=0;j<lon;j++){
+      const u0=i*Math.PI/lat,u1=(i+1)*Math.PI/lat,v0=j*2*Math.PI/lon,v1=(j+1)*2*Math.PI/lon;
+      b.quad(p(u0,v0),p(u0,v1),p(u1,v1),p(u1,v0));
+    }
+    upload(b,color,id,alpha);
+  }
+  function cylinder(a,c,r0,r1,color,id,n=16,alpha=1){
+    const b=builder(),dir=vnorm(vsub(c,a)),help=Math.abs(dir[1])>.92?[1,0,0]:[0,1,0],u=vnorm(cross(dir,help)),v=cross(dir,u);
+    function ring(p,r,t){ return [p[0]+r*(u[0]*Math.cos(t)+v[0]*Math.sin(t)), p[1]+r*(u[1]*Math.cos(t)+v[1]*Math.sin(t)), p[2]+r*(u[2]*Math.cos(t)+v[2]*Math.sin(t))]; }
+    for(let i=0;i<n;i++){
+      const t=i*2*Math.PI/n,nt=(i+1)*2*Math.PI/n;
+      b.quad(ring(a,r0,t), ring(a,r0,nt), ring(c,r1,nt), ring(c,r1,t));
+      b.tri(a, ring(a,r0,nt), ring(a,r0,t));
+      b.tri(c, ring(c,r1,t), ring(c,r1,nt));
+    }
+    upload(b,color,id,alpha);
+  }
+  function ringXY(cx,cy,cz,R,r,color,id,n=44,m=9){ const b=builder(); function p(t,q){ return [cx+(R+r*Math.cos(q))*Math.cos(t), cy+(R+r*Math.cos(q))*Math.sin(t), cz+r*Math.sin(q)]; } for(let i=0;i<n;i++) for(let j=0;j<m;j++){ const t=i*2*Math.PI/n,t2=(i+1)*2*Math.PI/n,q=j*2*Math.PI/m,q2=(j+1)*2*Math.PI/m; b.quad(p(t,q),p(t2,q),p(t2,q2),p(t,q2)); } upload(b,color,id); }
+  function ringXZ(cx,cy,cz,R,r,color,id,n=44,m=8){ const b=builder(); function p(t,q){ return [cx+(R+r*Math.cos(q))*Math.cos(t), cy+r*Math.sin(q), cz+(R+r*Math.cos(q))*Math.sin(t)]; } for(let i=0;i<n;i++) for(let j=0;j<m;j++){ const t=i*2*Math.PI/n,t2=(i+1)*2*Math.PI/n,q=j*2*Math.PI/m,q2=(j+1)*2*Math.PI/m; b.quad(p(t,q),p(t2,q),p(t2,q2),p(t,q2)); } upload(b,color,id); }
+
+  function model(){
+    const suit="#2c3941", suitLight="#3a4952", trim="#ccb26b", trimBright="#ffe198", boots="#151d23", dark="#162129", steel="#8ea2aa", hose="#968b67", strap="#101920", hood="#6b777f";
+
+    // platform
+    cylinder([0,-0.17,0],[0,-0.08,0],1.95,1.95,"#1d2d38",null,80);
+    ringXZ(0,-0.06,0,1.80,.02,"#58707c"); ringXZ(0,-0.06,0,1.45,.01,"#2e4852");
+
+    // legs and trousers
+    for(const s of [-1,1]){
+      cylinder([s*0.30,0.56,0.03],[s*0.32,1.78,0.00],0.23,0.26,suit,"trousers",18);
+      sphere(s*0.31,0.71,0.05,0.24,0.18,0.25,suitLight,"trousers");
+      cylinder([s*0.31,1.03,0.02],[s*0.31,1.08,0.02],0.255,0.255,trim,"trousers",18);
+      cylinder([s*0.31,1.085,0.02],[s*0.31,1.10,0.02],0.255,0.255,trimBright,"trousers",18);
+      box(s*0.30,0.37,0.02,0.40,0.54,0.42,boots,"boots");
+      sphere(s*0.30,0.17,0.22,0.27,0.16,0.42,"#1c2730","boots",1,10,18);
+      box(s*0.30,0.44,0.29,0.36,0.08,0.05,"#425258","boots");
+      box(s*0.30,0.05,0.04,0.44,0.06,0.62,"#10161c","boots");
+    }
+
+    // torso and jacket
+    sphere(0,2.58,0,0.71,0.80,0.50,suit,"jacket",1,16,24);
+    box(0,2.45,0,1.25,1.40,0.82,suit,"jacket");
+    sphere(0,1.84,0,0.55,0.18,0.38,"#1c2831","jacket",1,10,18);
+    box(0,2.03,0.42,1.21,0.14,0.05,trim,"jacket");
+    box(0,2.08,0.445,1.20,0.03,0.05,trimBright,"jacket");
+    box(0,2.64,0.43,1.24,0.16,0.05,trim,"jacket");
+    box(0,2.70,0.455,1.22,0.035,0.05,trimBright,"jacket");
+    box(0,2.56,0.46,0.08,1.16,0.04,"#16232b","jacket");
+    box(0,2.30,0.46,0.14,0.11,0.06,"#83979d","jacket");
+    // Back visibility panels: make the jacket identifiable from behind.
+    box(-0.41,2.52,-0.430,0.30,0.12,0.06,trim,"jacket");
+    box(-0.41,2.57,-0.465,0.30,0.03,0.06,trimBright,"jacket");
+    box(-0.46,2.02,-0.425,0.28,0.12,0.05,trim,"jacket");
+    box(-0.40,2.27,0.46,0.20,0.22,0.06,"#25313a","jacket");
+
+    // shoulders and arms
+    for(const s of [-1,1]){
+      sphere(s*0.60,3.05,0,0.28,0.28,0.38,suitLight,"jacket");
+      cylinder([s*0.63,3.03,0.0],[s*0.83,2.34,0.07],0.23,0.20,suit,"jacket",18);
+      cylinder([s*0.79,2.56,0.03],[s*0.81,2.47,0.03],0.205,0.205,trim,"jacket",16);
+      cylinder([s*0.84,2.33,0.06],[s*0.99,1.95,0.15],0.18,0.16,suit,"jacket",18);
+      cylinder([s*0.93,2.06,0.13],[s*0.95,2.02,0.14],0.16,0.16,trim,"jacket",14);
+      sphere(s*1.00,1.80,0.17,0.18,0.21,0.20,"#1a242c","gloves",1,10,16);
+      sphere(s*0.87,1.79,0.32,0.08,0.11,0.10,"#223039","gloves",1,8,12);
+    }
+
+    // neck, hood and head
+    cylinder([0,3.14,0],[0,3.36,0],0.24,0.22,"#1a252d","jacket",18);
+    cylinder([0,3.17,0],[0,3.40,0],0.32,0.25,hood,"hood",18);
+    sphere(0,3.38,0.04,0.33,0.34,0.29,"#ccaa8d",null,1,12,20);
+    // hood wings around neck / head
+    sphere(-0.22,3.30,0.06,0.12,0.18,0.10,hood,"hood",1,10,14);
+    sphere(0.22,3.30,0.06,0.12,0.18,0.10,hood,"hood",1,10,14);
+    sphere(0,3.18,-0.02,0.18,0.09,0.16,hood,"hood",1,8,14);
+    box(-0.18,3.30,-0.23,0.21,0.16,0.06,hood,"hood");
+
+    // helmet + visor + neck guard
+    cylinder([0,3.82,0],[0,4.02,0],0.40,0.36,"#e5b44b","helmet",24);
+    sphere(0,4.05,0,0.41,0.26,0.38,"#b9913e","helmet",1,14,24);
+    cylinder([0,3.83,0],[0,3.88,0],0.52,0.52,"#ffd97b","helmet",28);
+    cylinder([0,3.92,0],[0,4.22,0],0.07,0.06,"#f8dea0","helmet",18);
+    box(0,3.93,0.41,0.24,0.10,0.045,"#31434b","helmet");
+    box(0,3.84,-0.22,0.34,0.20,0.10,"#c39d4d","helmet");
+    sphere(0,3.63,0.35,0.31,0.22,0.055,"#87c1c7","visor",0.45,10,20);
+    box(0,3.68,0.40,0.53,0.04,0.055,"#445964","visor");
+
+    // SCBA / back
+    box(0,2.62,-0.52,0.80,1.36,0.30,"#101a22","breathing");
+    cylinder([0,2.12,-0.80],[0,3.16,-0.80],0.26,0.25,"#96a8ac","cylinder",24);
+    cylinder([0,3.13,-0.80],[0,3.20,-0.80],0.22,0.18,"#c0c8ca","cylinder",20);
+    cylinder([0,2.10,-0.80],[0,2.16,-0.80],0.22,0.22,"#374851","cylinder",18);
+    box(0,2.55,-1.03,0.25,0.54,0.04,"#2a434f","cylinder");
+    cylinder([-0.45,3.04,0.32],[-0.24,2.34,0.44],0.058,0.058,strap,"breathing",10);
+    cylinder([0.45,3.04,0.32],[0.24,2.34,0.44],0.058,0.058,strap,"breathing",10);
+    box(0,2.30,0.46,0.66,0.08,0.05,strap,"breathing");
+    cylinder([0.18,3.02,-0.84],[0.48,3.15,-0.48],0.065,0.07,"#212c31","breathing",14);
+    cylinder([0.48,3.15,-0.48],[0.34,3.19,0.18],0.07,0.065,"#222f35","breathing",14);
+    cylinder([0.34,3.19,0.18],[0.26,3.45,0.27],0.065,0.062,"#2f3c42","breathing",14);
+
+    // radio
+    box(-0.49,2.98,0.50,0.23,0.35,0.16,"#17232c","radio");
+    box(-0.49,3.04,0.59,0.14,0.10,0.016,"#88a7af","radio");
+    cylinder([-0.57,3.13,0.51],[-0.59,3.44,0.49],0.022,0.013,"#161e24","radio",9);
+    box(-0.49,2.88,0.58,0.13,0.035,0.018,"#d0b384","radio");
+
+    // axe on right side
+    cylinder([1.07,0.82,0.30],[1.07,1.80,0.30],0.05,0.05,"#aa8058","axe",10);
+    box(1.09,1.62,0.34,0.43,0.17,0.10,"#8698a0","axe");
+    box(1.28,1.62,0.33,0.12,0.25,0.12,"#b0c1c8","axe");
+
+    // coiled hose on left side
+    ringXY(-1.18,1.12,0.44,0.31,0.08,hose,"hose",46,11);
+    ringXY(-1.18,1.12,0.44,0.16,0.07,"#7f765b","hose",40,10);
+    cylinder([-1.17,1.39,0.51],[-0.94,1.82,0.28],0.07,0.06,"#8b8366","hose",10);
+    cylinder([-1.20,0.88,0.42],[-1.31,0.70,0.34],0.073,0.07,"#a59e84","hose",11);
+    cylinder([-1.31,0.70,0.34],[-1.28,0.38,0.34],0.074,0.071,"#8d866d","hose",11);
+  }
+
+  function resize(){ const rect=canvas.getBoundingClientRect(), dpr=Math.min(window.devicePixelRatio||1,2); const w=Math.round(rect.width*dpr), h=Math.round(rect.height*dpr); if(w!==lastW||h!==lastH){ canvas.width=w; canvas.height=h; lastW=w; lastH=h; if(gl) gl.viewport(0,0,w,h); } return rect; }
+
+  function drawMesh(m){
+    gl.bindBuffer(gl.ARRAY_BUFFER,m.b);
+    gl.vertexAttribPointer(aPosition,3,gl.FLOAT,false,24,0);
+    gl.vertexAttribPointer(aNormal,3,gl.FLOAT,false,24,12);
+    let clr=m.color;
+    if(selected===m.id && (mode==="explore" || mode==="find" || mode==="quiz")) clr=clr.map(x=>Math.min(1,x*1.35+0.10));
+    gl.uniform3fv(uColor,clr); gl.uniform1f(uAlpha,m.alpha); gl.drawArrays(gl.TRIANGLES,0,m.count);
+  }
+
+  function paintFallback(rect){
+    const ctx=ctx2d, dpr=canvas.width/Math.max(1,rect.width), triangles=[], lx=-0.45,ly=0.95,lz=0.85;
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,rect.width,rect.height);
+    for(const mesh of meshes){
+      const v=mesh.verts; let base=mesh.color; let color = (selected===mesh.id) ? base.map(c=>Math.min(1,c*1.35+0.1)) : base;
+      for(let j=0;j<v.length;j+=18){
+        const a=clipPoint([v[j],v[j+1],v[j+2]]), b=clipPoint([v[j+6],v[j+7],v[j+8]]), c=clipPoint([v[j+12],v[j+13],v[j+14]]);
+        if(a.w<=0||b.w<=0||c.w<=0) continue;
+        const nx=v[j+3], ny=v[j+4], nz=v[j+5];
+        const bright=Math.min(1.16,0.39+0.65*Math.max(0,nx*lx+ny*ly+nz*lz)/1.41);
+        const rgba=`rgba(${Math.min(255,Math.round(color[0]*bright*255))},${Math.min(255,Math.round(color[1]*bright*255))},${Math.min(255,Math.round(color[2]*bright*255))},${Math.min(1,mesh.alpha)})`;
+        const toP=p=>[(p.x+1)*0.5*rect.width,(1-p.y)*0.5*rect.height];
+        const p1=toP(a), p2=toP(b), p3=toP(c);
+        const area=Math.abs((p2[0]-p1[0])*(p3[1]-p1[1])-(p2[1]-p1[1])*(p3[0]-p1[0]));
+        if(area<0.06) continue;
+        triangles.push({p1,p2,p3,z:(a.w+b.w+c.w)/3,rgba});
+      }
+    }
+    triangles.sort((a,b)=>b.z-a.z);
+    for(const t of triangles){ ctx.beginPath(); ctx.moveTo(...t.p1); ctx.lineTo(...t.p2); ctx.lineTo(...t.p3); ctx.closePath(); ctx.fillStyle=t.rgba; ctx.fill(); }
+  }
+
+  function viewLabel(){
+    const deg=((cameraAz%(Math.PI*2))+Math.PI*2)%(Math.PI*2) * 180/Math.PI;
+    let name="FRONT VIEW";
+    const ang=((deg+360)%360);
+    if(ang>45 && ang<=135) name="RIGHT VIEW";
+    else if(ang>135 && ang<=225) name="BACK VIEW";
+    else if(ang>225 && ang<=315) name="LEFT VIEW";
+    $("orientationLabel").textContent = `${name} / ${String(Math.round(ang)).padStart(3,'0')}°`;
+  }
+
+  function angleDelta(a,b){ return Math.atan2(Math.sin(a-b), Math.cos(a-b)); }
+
+  function updateHotspotPositions(rect){
+    for(let i=0;i<ITEMS.length;i++){
+      const item=ITEMS[i], el=hotspotEls.get(item.id);
+      const p=clipPoint(item.point);
+      const x=(p.x+1)*0.5*rect.width, y=(1-p.y)*0.5*rect.height;
+      const visibleByAngle=Math.abs(angleDelta(cameraAz,item.az)) < 1.18;
+      const inside = p.w > 0 && p.x>-1.2 && p.x<1.2 && p.y>-1.25 && p.y<1.25;
+      if(inside && visibleByAngle){
+        el.style.left = `${x}px`; el.style.top = `${y}px`; el.classList.remove("hidden-marker");
+      } else {
+        el.classList.add("hidden-marker");
+      }
+    }
+  }
+
+  function render(){
+    if(!gl && !ctx2d) return;
+    const rect=resize();
+    cameraAz += ((targetAz-cameraAz+Math.PI*3)%(Math.PI*2)-Math.PI)*0.15;
+    cameraEl = smooth(cameraEl,targetEl,0.13);
+    radius = smooth(radius,targetRadius,0.13);
+    const cx=0, cy=2.05, cz=0;
+    const cam=[cx+radius*Math.sin(cameraAz)*Math.cos(cameraEl), cy+radius*Math.sin(cameraEl), cz+radius*Math.cos(cameraAz)*Math.cos(cameraEl)];
+    const pr=perspective(39*Math.PI/180, rect.width/Math.max(rect.height,1), 0.1, 70);
+    vp = matrixMultiply(pr, lookAt(cam,[cx,cy,cz],[0,1,0]));
+    if(gl){
+      gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+      gl.useProgram(program); gl.uniformMatrix4fv(uVP,false,vp); gl.enableVertexAttribArray(aPosition); gl.enableVertexAttribArray(aNormal);
+      for(const m of meshes){ if(m.alpha<1) continue; drawMesh(m); }
+      gl.depthMask(false); for(const m of meshes){ if(m.alpha===1) continue; drawMesh(m); } gl.depthMask(true);
+    }else{
+      if(Math.abs(cameraAz-targetAz)>.001 || Math.abs(cameraEl-targetEl)>.001 || Math.abs(radius-targetRadius)>.001 || lastFallback<0){ paintFallback(rect); lastFallback=performance.now(); }
+    }
+    viewLabel();
+    updateHotspotPositions(rect);
+    requestAnimationFrame(render);
+  }
+
+  function createHotspots(){
+    for(let i=0;i<ITEMS.length;i++){
+      const d=ITEMS[i], b=document.createElement("button");
+      b.className="hotspot"; b.type="button"; b.setAttribute("aria-label",`Inspect ${d.en}`); b.title=`Marker ${i+1}`;
+      b.innerHTML = `<span>${String(i+1).padStart(2,'0')}</span>`;
+      b.addEventListener("click",()=>onItemClick(d));
+      hotspotLayer.appendChild(b); hotspotEls.set(d.id,b);
+    }
+  }
+
+  function createList(){
+    const cont=$("equipmentList");
+    for(let i=0;i<ITEMS.length;i++){
+      const d=ITEMS[i], row=document.createElement("button");
+      row.className="equipment-row"; row.id=`row-${d.id}`;
+      row.innerHTML=`<span class="index">${String(i+1).padStart(2,'0')}</span><span class="ename">${d.en}</span><span class="check">○</span>`;
+      row.addEventListener("click",()=>{
+        if(mode!=="explore") { $("quizStatus").textContent="Use the numbered markers on the model during challenges."; return; }
+        setAim(d.az); choose(d);
+      });
+      cont.appendChild(row);
+    }
+  }
+
+  function updateMarkers(){
+    for(const d of ITEMS){
+      const el=hotspotEls.get(d.id), row=$("row-"+d.id);
+      el.classList.toggle("active", selected===d.id);
+      el.classList.toggle("visited", visited.has(d.id));
+      row.classList.toggle("visited", visited.has(d.id));
+      row.classList.toggle("selected", selected===d.id);
+      row.querySelector(".check").textContent = visited.has(d.id) ? "✓" : "○";
+      row.querySelector(".ename").textContent = mode === "explore" || visited.has(d.id) ? d.en : "UNIDENTIFIED";
+    }
+    $("foundCount").textContent = `${String(visited.size).padStart(2,'0')} / ${ITEMS.length} IDENTIFIED`;
+  }
+
+  function choose(d){
+    selected=d.id; visited.add(d.id);
+    $("blankState").classList.add("hidden"); $("detailCard").classList.remove("hidden");
+    $("itemCode").textContent = "GEAR / " + String(ITEMS.indexOf(d)+1).padStart(2,'0');
+    $("itemCategory").textContent = CATEGORIES[d.cat];
+    $("itemEn").textContent = d.en; $("itemPl").textContent = d.pl; $("itemFunction").textContent = d.func; $("itemSentence").textContent = d.sentence;
+    updateMarkers();
+  }
+
+  function setAim(az){ targetAz=az; }
+
+  function onItemClick(d){
+    if(mode==="explore"){ choose(d); return; }
+    if(qIndex>=qOrder.length) return;
+    if(mode==="find"){
+      if(qIdentified) return;
+      if(d.id===qOrder[qIndex].id){
+        qIdentified=true; qScore++; selected=d.id; visited.add(d.id); updateMarkers(); choose(d);
+        $("quizStatus").className="quiz-status success";
+        $("quizStatus").textContent = `Correct! ${d.pl} · ${d.func}`;
+        $("nextQuestion").textContent = qIndex===qOrder.length-1 ? "VIEW RESULTS ↗" : "NEXT ITEM ↗";
+        $("nextQuestion").classList.remove("hidden");
+        updateScore();
+      } else {
+        qMisses++; $("quizStatus").className="quiz-status error"; $("quizStatus").textContent=qMisses>=2 ? `Hint: ${qOrder[qIndex].hint}` : "Not this one. Rotate the model and try again.";
+      }
+      return;
+    }
+    // quiz mode
+    if(qIdentified || qIndex>=qOrder.length) return;
+    if(d.id===qOrder[qIndex].id){
+      qIdentified=true; qScore++; $("quizStatus").textContent="Correct item! Now classify it."; $("quizStatus").className="quiz-status success";
+      $("categoryPanel").classList.remove("hidden"); selected=d.id; visited.add(d.id); choose(d); updateMarkers(); updateScore();
+    } else {
+      qMisses++; $("quizStatus").textContent=qMisses>=2 ? `Hint: ${qOrder[qIndex].hint}` : "Not this one. Try another marker."; $("quizStatus").className="quiz-status error";
+    }
+  }
+
+  function setMode(which){
+    mode=which;
+    document.body.classList.toggle("challenge-active", which!=="explore");
+    $("exploreMode").classList.toggle("active",which==="explore"); $("findMode").classList.toggle("active",which==="find"); $("quizMode").classList.toggle("active",which==="quiz");
+    $("exploreMode").setAttribute("aria-pressed",which==="explore"); $("findMode").setAttribute("aria-pressed",which==="find"); $("quizMode").setAttribute("aria-pressed",which==="quiz");
+    const exploring = which==="explore";
+    $("exploreSidebar").classList.toggle("hidden", !exploring);
+    $("challengeSidebar").classList.toggle("hidden", exploring);
+    $("exploreContent").classList.toggle("hidden", !exploring);
+    $("quizSummary").classList.add("hidden");
+    if(exploring){
+      $("equipmentList").style.opacity="1"; selected=null; updateMarkers();
+      $("blankState").classList.remove("hidden"); $("detailCard").classList.add("hidden");
+    } else {
+      startChallenge(which);
+    }
+  }
+
+  function startChallenge(which){
+    $("challengeSidebar").classList.remove("hidden");
+    $("quizSummary").classList.add("hidden");
+    visited.clear(); selected=null; qScore=0; qIndex=0; qIdentified=false; qCategoryDone=false;
+    qOrder=[...ITEMS].sort(()=>Math.random()-0.5);
+    $("equipmentList").style.opacity="1";
+    $("challengeHeading").textContent = which==="find" ? "FIND MODE" : "QUIZ MODE";
+    $("challengeIntro").textContent = which==="find" ? "Find the correct numbered marker on the model." : "Find the item, then classify it correctly.";
+    $("promptLabel").textContent = which==="find" ? "LOCATE THIS ITEM" : "FIND THIS ITEM";
+    $("finalScoreMax").textContent = which==="find" ? `/ ${ITEMS.length} POINTS` : `/ ${ITEMS.length*2} POINTS`;
+    prepareQuestion();
+  }
+
+  function prepareQuestion(){
+    qIdentified=false; qCategoryDone=false; qMisses=0; selected=null;
+    const d=qOrder[qIndex];
+    $("quizTarget").textContent=d.en; $("quizHint").textContent="Start from the front, then search the sides and back. Two misses unlock a clue.";
+    $("progressLabel").textContent=`QUESTION ${qIndex+1} / ${qOrder.length}`;
+    $("progressBar").style.width=`${qIndex/qOrder.length*100}%`;
+    $("quizStatus").className="quiz-status";
+    $("quizStatus").textContent = mode==="find" ? "Click the correct numbered marker on the model." : "Click the corresponding equipment marker.";
+    $("categoryPanel").classList.add("hidden"); $("nextQuestion").classList.add("hidden"); $("restartChallenge").classList.add("hidden");
+    for(const b of $("categoryPanel").querySelectorAll("button")){ b.classList.remove("correct","incorrect"); b.disabled=false; }
+    setAim(0.16); updateMarkers(); updateScore();
+  }
+
+  function updateScore(){
+    const max = mode==="quiz" ? ITEMS.length*2 : ITEMS.length;
+    $("scoreLabel").textContent = `${qScore} / ${max} PTS`;
+  }
+
+  function selectCategory(cat){
+    if(mode!=="quiz" || !qIdentified || qCategoryDone) return;
+    qCategoryDone=true;
+    const d=qOrder[qIndex], ok=d.cat===cat;
+    if(ok) qScore++;
+    const buttons=$("categoryPanel").querySelectorAll("button");
+    for(const b of buttons){ b.disabled=true; if(b.dataset.category===d.cat) b.classList.add("correct"); else if(b.dataset.category===cat) b.classList.add("incorrect"); }
+    $("quizStatus").className = "quiz-status " + (ok ? "success" : "error");
+    $("quizStatus").textContent = ok ? `Correct! ${d.pl} · ${d.func}` : `Correct category: ${CATEGORIES[d.cat].toLowerCase()}. ${d.func}`;
+    $("nextQuestion").textContent = qIndex===qOrder.length-1 ? "VIEW RESULTS ↗" : "NEXT ITEM ↗";
+    $("nextQuestion").classList.remove("hidden"); updateScore();
+  }
+
+  function nextQuestion(){ qIndex++; if(qIndex===qOrder.length){ finishChallenge(); return; } prepareQuestion(); }
+
+  function finishChallenge(){
+    $("challengeSidebar").classList.add("hidden"); $("quizSummary").classList.remove("hidden"); $("equipmentList").style.opacity="1"; $("finalScore").textContent=qScore; $("progressBar").style.width="100%";
+    const max = mode==="quiz" ? ITEMS.length*2 : ITEMS.length;
+    $("summaryTitle").textContent = mode==="find" ? "Search mission complete." : "Quiz complete.";
+    if(mode==="find"){
+      $("finalMessage").textContent = qScore>=10 ? "Excellent scanning and orientation. You found most of the equipment quickly." : qScore>=7 ? "Good work. Explore the model again to improve your spatial memory." : "Review the equipment in Explore mode and try Find mode again.";
+    } else {
+      $("finalMessage").textContent = qScore>=20 ? "Excellent work. You can identify and classify most of the equipment." : qScore>=14 ? "Good progress! Explore the remaining items and try again." : "Practice makes progress. Review the equipment in Explore mode and replay the quiz.";
+    }
+    $("finalScoreMax").textContent = `/ ${max} POINTS`;
+    targetAz=0.16; selected=null; updateMarkers();
+  }
+
+  function hookEvents(){
+    let drag=false, px=0, py=0;
+    canvas.addEventListener("pointerdown",e=>{ drag=true; px=e.clientX; py=e.clientY; canvas.setPointerCapture(e.pointerId); });
+    canvas.addEventListener("pointermove",e=>{ if(!drag) return; const dx=e.clientX-px, dy=e.clientY-py; targetAz += dx*0.009; targetEl = clamp(targetEl + dy*0.006,-0.30,0.48); px=e.clientX; py=e.clientY; });
+    canvas.addEventListener("pointerup",()=>drag=false); canvas.addEventListener("pointercancel",()=>drag=false);
+    canvas.addEventListener("wheel",e=>{ e.preventDefault(); targetRadius = clamp(targetRadius + e.deltaY*0.007,5.7,12.0); },{passive:false});
+    canvas.addEventListener("keydown",e=>{ if(e.key==="ArrowLeft"){ targetAz-=0.25; e.preventDefault(); } if(e.key==="ArrowRight"){ targetAz+=0.25; e.preventDefault(); } if(e.key==="ArrowUp"){ targetEl=clamp(targetEl-0.12,-0.30,0.48); e.preventDefault(); } if(e.key==="ArrowDown"){ targetEl=clamp(targetEl+0.12,-0.30,0.48); e.preventDefault(); } });
+    $("frontView").addEventListener("click",()=>setAim(0.0));
+    $("leftView").addEventListener("click",()=>setAim(-Math.PI/2));
+    $("rightView").addEventListener("click",()=>setAim(Math.PI/2));
+    $("backView").addEventListener("click",()=>setAim(Math.PI));
+    $("resetView").addEventListener("click",()=>{ setAim(0.16); targetEl=-0.04; targetRadius=8.1; });
+    $("exploreMode").addEventListener("click",()=>setMode("explore"));
+    $("findMode").addEventListener("click",()=>setMode("find"));
+    $("quizMode").addEventListener("click",()=>setMode("quiz"));
+    $("anotherItem").addEventListener("click",()=>{ selected=null; $("detailCard").classList.add("hidden"); $("blankState").classList.remove("hidden"); updateMarkers(); });
+    $("nextQuestion").addEventListener("click",nextQuestion);
+    $("restartChallenge").addEventListener("click",()=>startChallenge(mode));
+    $("replayQuiz").addEventListener("click",()=>startChallenge(mode));
+    for(const b of $("categoryPanel").querySelectorAll("button")) b.addEventListener("click",()=>selectCategory(b.dataset.category));
+    window.addEventListener("resize",()=>resize());
+  }
+
+  function main(){
+    canvas=$("view3d"); hotspotLayer=$("hotspots");
+    $("clothCount").textContent=counts.clothing; $("equipCount").textContent=counts.equipment; $("toolCount").textContent=counts.tool; $("commCount").textContent=counts.communication;
+    createHotspots(); createList(); hookEvents(); initGL(); if(!gl && !ctx2d) return; model(); requestAnimationFrame(render);
+  }
+
+  main();
+})();
+
+</script>
+</body>
+</html>
