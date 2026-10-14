@@ -26,6 +26,13 @@
 body.challenge-active .equipment-list{display:none}
 body.challenge-active .locked-note{display:block}
 .hotspot.active{outline:2px solid #fff4ce;outline-offset:2px}
+/* 2.2: Equipment checklist must not overlap the EXPLORE ANOTHER button.
+   Flex children used to shrink below their own contents on medium-height screens. */
+.right-panel .explore-content,
+.right-panel .equipment-list-head,
+.right-panel .equipment-list,
+.right-panel .bottom-source { flex-shrink: 0; }
+.right-panel .equipment-list-head { margin-top: 18px; }
 
 </style>
   
@@ -37,7 +44,7 @@ body.challenge-active .locked-note{display:block}
         <span class="brandmark" aria-hidden="true">✳</span>
         <div>
           <span class="kicker">SPBW1 · PROFESSIONAL ENGLISH · LESSON 03</span>
-          <strong>FIREFIGHTER <em>EQUIPMENT LAB</em> <span class="v2">2.1</span></strong>
+          <strong>FIREFIGHTER <em>EQUIPMENT LAB</em> <span class="v2">2.2</span></strong>
         </div>
       </div>
       <div class="topbar-right">
@@ -127,7 +134,7 @@ body.challenge-active .locked-note{display:block}
         <div class="equipment-list-head"><span class="tiny-heading">EQUIPMENT CHECKLIST</span><span class="dot-grid">•••</span></div>
         <div id="equipmentList" class="equipment-list"></div>
         <div id="lockedNote" class="locked-note">INDEX LOCKED WHILE SEARCHING. ROTATE THE MODEL TO FIND THE NUMBERED ITEMS.</div>
-        <div class="bottom-source">SOURCE: SENDUR &amp; WARECKA · 8.2 FIRE BRIGADE<br>LEARNING ACTIVITY: SPBW1 / LESSON 03 / VERSION 2.1</div>
+        <div class="bottom-source">SOURCE: SENDUR &amp; WARECKA · 8.2 FIRE BRIGADE<br>LEARNING ACTIVITY: SPBW1 / LESSON 03 / VERSION 2.2</div>
       </aside>
     </div>
 
@@ -597,7 +604,19 @@ body.challenge-active .locked-note{display:block}
     $("exploreMode").addEventListener("click",()=>setMode("explore"));
     $("findMode").addEventListener("click",()=>setMode("find"));
     $("quizMode").addEventListener("click",()=>setMode("quiz"));
-    $("anotherItem").addEventListener("click",()=>{ selected=null; $("detailCard").classList.add("hidden"); $("blankState").classList.remove("hidden"); updateMarkers(); });
+    // Explore Another must actually load another item, not just clear the card.
+    // Prefer an item the student has not inspected yet, then cycle after all 12 are seen.
+    $("anotherItem").addEventListener("click",()=>{
+      if(mode!=="explore") return;
+      const currentIndex = Math.max(0, ITEMS.findIndex(item=>item.id===selected));
+      let next = ITEMS[(currentIndex+1)%ITEMS.length];
+      for(let offset=1;offset<=ITEMS.length;offset++){
+        const candidate=ITEMS[(currentIndex+offset)%ITEMS.length];
+        if(!visited.has(candidate.id)){ next=candidate; break; }
+      }
+      setAim(next.az);
+      choose(next);
+    });
     $("nextQuestion").addEventListener("click",nextQuestion);
     $("restartChallenge").addEventListener("click",()=>startChallenge(mode));
     $("replayQuiz").addEventListener("click",()=>startChallenge(mode));
